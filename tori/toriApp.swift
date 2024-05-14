@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
-struct toriApp: App {
+struct DreamTeamApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            OpenAIView()
         }
     }
 }

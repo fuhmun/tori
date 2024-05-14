@@ -14,6 +14,34 @@
 		168AF5CD2BF3AE50006CE4AF /* toriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5CC2BF3AE50006CE4AF /* toriTests.swift */; };
 		168AF5D72BF3AE50006CE4AF /* toriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5D62BF3AE50006CE4AF /* toriUITests.swift */; };
 		168AF5D92BF3AE50006CE4AF /* toriUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5D82BF3AE50006CE4AF /* toriUITestsLaunchTests.swift */; };
+		168AF5E62BF3B240006CE4AF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5E52BF3B240006CE4AF /* Model.swift */; };
+		168AF5E82BF3B262006CE4AF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5E72BF3B262006CE4AF /* Profile.swift */; };
+		168AF5EA2BF3B2FC006CE4AF /* OpenAIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5E92BF3B2FC006CE4AF /* OpenAIViewModel.swift */; };
+		168AF5EC2BF3B365006CE4AF /* OpenAIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5EB2BF3B365006CE4AF /* OpenAIView.swift */; };
+		168AF5EE2BF3B385006CE4AF /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5ED2BF3B385006CE4AF /* OpenAIService.swift */; };
+		168AF5F02BF3B414006CE4AF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5EF2BF3B414006CE4AF /* ProfileView.swift */; };
+		168AF5F22BF3B4A2006CE4AF /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5F12BF3B4A2006CE4AF /* SuggestionView.swift */; };
+		168AF5F42BF3B4C5006CE4AF /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5F32BF3B4C5006CE4AF /* DiscoverView.swift */; };
+		168AF5F72BF3B5E7006CE4AF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 168AF5F62BF3B5E7006CE4AF /* Alamofire */; };
+		168AF5F92BF3B5E7006CE4AF /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 168AF5F82BF3B5E7006CE4AF /* AlamofireDynamic */; };
+		168AF5FC2BF3BB37006CE4AF /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5FB2BF3BB37006CE4AF /* OnBoarding.swift */; };
+		168AF5FE2BF3BB46006CE4AF /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5FD2BF3BB46006CE4AF /* SplashScreen.swift */; };
+		168AF6012BF3BB7E006CE4AF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6002BF3BB7E006CE4AF /* CardView.swift */; };
+		168AF6032BF3BBAB006CE4AF /* SmallCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6022BF3BBAB006CE4AF /* SmallCardView.swift */; };
+		168AF6052BF3BBCA006CE4AF /* FrontBigCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6042BF3BBCA006CE4AF /* FrontBigCardView.swift */; };
+		168AF6072BF3BBDB006CE4AF /* BackBigCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6062BF3BBDB006CE4AF /* BackBigCardView.swift */; };
+		168AF6092BF3BC6F006CE4AF /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6082BF3BC6F006CE4AF /* FilterView.swift */; };
+		168AF60B2BF3BC7D006CE4AF /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF60A2BF3BC7D006CE4AF /* SearchBarView.swift */; };
+		168AF60D2BF3BC8A006CE4AF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF60C2BF3BC8A006CE4AF /* LoadingView.swift */; };
+		168AF60F2BF3BCBB006CE4AF /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF60E2BF3BCBB006CE4AF /* MessageView.swift */; };
+		168AF6122BF3BD05006CE4AF /* YelpFusion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6112BF3BD05006CE4AF /* YelpFusion.swift */; };
+		168AF6142BF3BD25006CE4AF /* OpenAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6132BF3BD25006CE4AF /* OpenAI.swift */; };
+		168AF6162BF3BD36006CE4AF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6152BF3BD36006CE4AF /* LocationManager.swift */; };
+		168AF6182BF3BD82006CE4AF /* SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6172BF3BD82006CE4AF /* SwiftData.swift */; };
+		168AF61C2BF3BDE6006CE4AF /* FrontSmallCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF61B2BF3BDE6006CE4AF /* FrontSmallCardView.swift */; };
+		168AF61E2BF3BDF6006CE4AF /* BackSmallCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF61D2BF3BDF6006CE4AF /* BackSmallCardView.swift */; };
+		168AF6202BF3BE3A006CE4AF /* TipKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF61F2BF3BE3A006CE4AF /* TipKit.swift */; };
+		168AF6232BF3C025006CE4AF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 168AF6222BF3C025006CE4AF /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +72,31 @@
 		168AF5D22BF3AE50006CE4AF /* toriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = toriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		168AF5D62BF3AE50006CE4AF /* toriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toriUITests.swift; sourceTree = "<group>"; };
 		168AF5D82BF3AE50006CE4AF /* toriUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toriUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		168AF5E52BF3B240006CE4AF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		168AF5E72BF3B262006CE4AF /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		168AF5E92BF3B2FC006CE4AF /* OpenAIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIViewModel.swift; sourceTree = "<group>"; };
+		168AF5EB2BF3B365006CE4AF /* OpenAIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIView.swift; sourceTree = "<group>"; };
+		168AF5ED2BF3B385006CE4AF /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		168AF5EF2BF3B414006CE4AF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		168AF5F12BF3B4A2006CE4AF /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
+		168AF5F32BF3B4C5006CE4AF /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		168AF5FB2BF3BB37006CE4AF /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
+		168AF5FD2BF3BB46006CE4AF /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		168AF6002BF3BB7E006CE4AF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		168AF6022BF3BBAB006CE4AF /* SmallCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCardView.swift; sourceTree = "<group>"; };
+		168AF6042BF3BBCA006CE4AF /* FrontBigCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontBigCardView.swift; sourceTree = "<group>"; };
+		168AF6062BF3BBDB006CE4AF /* BackBigCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackBigCardView.swift; sourceTree = "<group>"; };
+		168AF6082BF3BC6F006CE4AF /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		168AF60A2BF3BC7D006CE4AF /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		168AF60C2BF3BC8A006CE4AF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		168AF60E2BF3BCBB006CE4AF /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		168AF6112BF3BD05006CE4AF /* YelpFusion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpFusion.swift; sourceTree = "<group>"; };
+		168AF6132BF3BD25006CE4AF /* OpenAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAI.swift; sourceTree = "<group>"; };
+		168AF6152BF3BD36006CE4AF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		168AF6172BF3BD82006CE4AF /* SwiftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftData.swift; sourceTree = "<group>"; };
+		168AF61B2BF3BDE6006CE4AF /* FrontSmallCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontSmallCardView.swift; sourceTree = "<group>"; };
+		168AF61D2BF3BDF6006CE4AF /* BackSmallCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackSmallCardView.swift; sourceTree = "<group>"; };
+		168AF61F2BF3BE3A006CE4AF /* TipKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168AF6232BF3C025006CE4AF /* SDWebImageSwiftUI in Frameworks */,
+				168AF5F72BF3B5E7006CE4AF /* Alamofire in Frameworks */,
+				168AF5F92BF3B5E7006CE4AF /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +152,11 @@
 			children = (
 				168AF5BB2BF3AE4F006CE4AF /* toriApp.swift */,
 				168AF5BD2BF3AE4F006CE4AF /* ContentView.swift */,
+				168AF5FA2BF3BB09006CE4AF /* Views */,
+				168AF6102BF3BCD9006CE4AF /* Models */,
+				168AF5E92BF3B2FC006CE4AF /* OpenAIViewModel.swift */,
+				168AF5EB2BF3B365006CE4AF /* OpenAIView.swift */,
+				168AF5ED2BF3B385006CE4AF /* OpenAIService.swift */,
 				168AF5BF2BF3AE50006CE4AF /* Assets.xcassets */,
 				168AF5C12BF3AE50006CE4AF /* Preview Content */,
 			);
@@ -127,6 +188,66 @@
 			path = toriUITests;
 			sourceTree = "<group>";
 		};
+		168AF5FA2BF3BB09006CE4AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				168AF5EF2BF3B414006CE4AF /* ProfileView.swift */,
+				168AF5F32BF3B4C5006CE4AF /* DiscoverView.swift */,
+				168AF5F12BF3B4A2006CE4AF /* SuggestionView.swift */,
+				168AF5FB2BF3BB37006CE4AF /* OnBoarding.swift */,
+				168AF5FD2BF3BB46006CE4AF /* SplashScreen.swift */,
+				168AF5FF2BF3BB64006CE4AF /* SubViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		168AF5FF2BF3BB64006CE4AF /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				168AF6002BF3BB7E006CE4AF /* CardView.swift */,
+				168AF6192BF3BD89006CE4AF /* BigCardView */,
+				168AF6022BF3BBAB006CE4AF /* SmallCardView.swift */,
+				168AF61A2BF3BDC5006CE4AF /* SmallCardView */,
+				168AF6082BF3BC6F006CE4AF /* FilterView.swift */,
+				168AF60A2BF3BC7D006CE4AF /* SearchBarView.swift */,
+				168AF60C2BF3BC8A006CE4AF /* LoadingView.swift */,
+				168AF60E2BF3BCBB006CE4AF /* MessageView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		168AF6102BF3BCD9006CE4AF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				168AF6112BF3BD05006CE4AF /* YelpFusion.swift */,
+				168AF6132BF3BD25006CE4AF /* OpenAI.swift */,
+				168AF6152BF3BD36006CE4AF /* LocationManager.swift */,
+				168AF5E52BF3B240006CE4AF /* Model.swift */,
+				168AF5E72BF3B262006CE4AF /* Profile.swift */,
+				168AF6172BF3BD82006CE4AF /* SwiftData.swift */,
+				168AF61F2BF3BE3A006CE4AF /* TipKit.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		168AF6192BF3BD89006CE4AF /* BigCardView */ = {
+			isa = PBXGroup;
+			children = (
+				168AF6042BF3BBCA006CE4AF /* FrontBigCardView.swift */,
+				168AF6062BF3BBDB006CE4AF /* BackBigCardView.swift */,
+			);
+			path = BigCardView;
+			sourceTree = "<group>";
+		};
+		168AF61A2BF3BDC5006CE4AF /* SmallCardView */ = {
+			isa = PBXGroup;
+			children = (
+				168AF61B2BF3BDE6006CE4AF /* FrontSmallCardView.swift */,
+				168AF61D2BF3BDF6006CE4AF /* BackSmallCardView.swift */,
+			);
+			path = SmallCardView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +264,11 @@
 			dependencies = (
 			);
 			name = tori;
+			packageProductDependencies = (
+				168AF5F62BF3B5E7006CE4AF /* Alamofire */,
+				168AF5F82BF3B5E7006CE4AF /* AlamofireDynamic */,
+				168AF6222BF3C025006CE4AF /* SDWebImageSwiftUI */,
+			);
 			productName = tori;
 			productReference = 168AF5B82BF3AE4F006CE4AF /* tori.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +341,10 @@
 				Base,
 			);
 			mainGroup = 168AF5AF2BF3AE4F006CE4AF;
+			packageReferences = (
+				168AF5F52BF3B5E7006CE4AF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				168AF6212BF3C025006CE4AF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 168AF5B92BF3AE4F006CE4AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +387,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168AF5FE2BF3BB46006CE4AF /* SplashScreen.swift in Sources */,
+				168AF61E2BF3BDF6006CE4AF /* BackSmallCardView.swift in Sources */,
+				168AF6182BF3BD82006CE4AF /* SwiftData.swift in Sources */,
+				168AF5F02BF3B414006CE4AF /* ProfileView.swift in Sources */,
+				168AF6032BF3BBAB006CE4AF /* SmallCardView.swift in Sources */,
+				168AF6072BF3BBDB006CE4AF /* BackBigCardView.swift in Sources */,
+				168AF60F2BF3BCBB006CE4AF /* MessageView.swift in Sources */,
+				168AF61C2BF3BDE6006CE4AF /* FrontSmallCardView.swift in Sources */,
+				168AF5F22BF3B4A2006CE4AF /* SuggestionView.swift in Sources */,
+				168AF5EE2BF3B385006CE4AF /* OpenAIService.swift in Sources */,
+				168AF6162BF3BD36006CE4AF /* LocationManager.swift in Sources */,
+				168AF5EC2BF3B365006CE4AF /* OpenAIView.swift in Sources */,
+				168AF5E62BF3B240006CE4AF /* Model.swift in Sources */,
+				168AF5EA2BF3B2FC006CE4AF /* OpenAIViewModel.swift in Sources */,
+				168AF6012BF3BB7E006CE4AF /* CardView.swift in Sources */,
+				168AF60B2BF3BC7D006CE4AF /* SearchBarView.swift in Sources */,
+				168AF6092BF3BC6F006CE4AF /* FilterView.swift in Sources */,
+				168AF6202BF3BE3A006CE4AF /* TipKit.swift in Sources */,
+				168AF6122BF3BD05006CE4AF /* YelpFusion.swift in Sources */,
+				168AF5E82BF3B262006CE4AF /* Profile.swift in Sources */,
+				168AF5F42BF3B4C5006CE4AF /* DiscoverView.swift in Sources */,
 				168AF5BE2BF3AE4F006CE4AF /* ContentView.swift in Sources */,
 				168AF5BC2BF3AE4F006CE4AF /* toriApp.swift in Sources */,
+				168AF5FC2BF3BB37006CE4AF /* OnBoarding.swift in Sources */,
+				168AF60D2BF3BC8A006CE4AF /* LoadingView.swift in Sources */,
+				168AF6052BF3BBCA006CE4AF /* FrontBigCardView.swift in Sources */,
+				168AF6142BF3BD25006CE4AF /* OpenAI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +743,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		168AF5F52BF3B5E7006CE4AF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		168AF6212BF3C025006CE4AF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		168AF5F62BF3B5E7006CE4AF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 168AF5F52BF3B5E7006CE4AF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		168AF5F82BF3B5E7006CE4AF /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 168AF5F52BF3B5E7006CE4AF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+		168AF6222BF3C025006CE4AF /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 168AF6212BF3C025006CE4AF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 168AF5B02BF3AE4F006CE4AF /* Project object */;
 }
