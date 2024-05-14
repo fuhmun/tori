@@ -1,21 +1,29 @@
 //
 //  ContentView.swift
-//  tori
+//  DreamTeam
 //
-//  Created by Fahad Munawar on 5/14/24.
+//  Created by Fahad Munawar on 5/3/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView{
+            DiscoverView()
+                .tabItem{
+                    Label("Discover",systemImage:"magnifyingglass")
+                }
+            SuggestionView()
+                .tabItem{
+                    Label("Home",systemImage:"house")
+                }
+            ProfileView()
+                .tabItem{
+                    Label("Profile",systemImage:"person.crop.circle")
+                }
         }
-        .padding()
     }
 }
 
