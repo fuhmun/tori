@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		168AF5BC2BF3AE4F006CE4AF /* toriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5BB2BF3AE4F006CE4AF /* toriApp.swift */; };
+		168AF5BE2BF3AE4F006CE4AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5BD2BF3AE4F006CE4AF /* ContentView.swift */; };
+		168AF5C02BF3AE50006CE4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 168AF5BF2BF3AE50006CE4AF /* Assets.xcassets */; };
+		168AF5C32BF3AE50006CE4AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 168AF5C22BF3AE50006CE4AF /* Preview Assets.xcassets */; };
+		168AF5CD2BF3AE50006CE4AF /* toriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5CC2BF3AE50006CE4AF /* toriTests.swift */; };
+		168AF5D72BF3AE50006CE4AF /* toriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5D62BF3AE50006CE4AF /* toriUITests.swift */; };
+		168AF5D92BF3AE50006CE4AF /* toriUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF5D82BF3AE50006CE4AF /* toriUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		168AF5C92BF3AE50006CE4AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 168AF5B02BF3AE4F006CE4AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 168AF5B72BF3AE4F006CE4AF;
+			remoteInfo = tori;
+		};
+		168AF5D32BF3AE50006CE4AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 168AF5B02BF3AE4F006CE4AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 168AF5B72BF3AE4F006CE4AF;
+			remoteInfo = tori;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		168AF5B82BF3AE4F006CE4AF /* tori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tori.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		168AF5BB2BF3AE4F006CE4AF /* toriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toriApp.swift; sourceTree = "<group>"; };
+		168AF5BD2BF3AE4F006CE4AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		168AF5BF2BF3AE50006CE4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		168AF5C22BF3AE50006CE4AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		168AF5C82BF3AE50006CE4AF /* toriTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = toriTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		168AF5CC2BF3AE50006CE4AF /* toriTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toriTests.swift; sourceTree = "<group>"; };
+		168AF5D22BF3AE50006CE4AF /* toriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = toriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		168AF5D62BF3AE50006CE4AF /* toriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toriUITests.swift; sourceTree = "<group>"; };
+		168AF5D82BF3AE50006CE4AF /* toriUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toriUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		168AF5B52BF3AE4F006CE4AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		168AF5C52BF3AE50006CE4AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		168AF5CF2BF3AE50006CE4AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		168AF5AF2BF3AE4F006CE4AF = {
+			isa = PBXGroup;
+			children = (
+				168AF5BA2BF3AE4F006CE4AF /* tori */,
+				168AF5CB2BF3AE50006CE4AF /* toriTests */,
+				168AF5D52BF3AE50006CE4AF /* toriUITests */,
+				168AF5B92BF3AE4F006CE4AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		168AF5B92BF3AE4F006CE4AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				168AF5B82BF3AE4F006CE4AF /* tori.app */,
+				168AF5C82BF3AE50006CE4AF /* toriTests.xctest */,
+				168AF5D22BF3AE50006CE4AF /* toriUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		168AF5BA2BF3AE4F006CE4AF /* tori */ = {
+			isa = PBXGroup;
+			children = (
+				168AF5BB2BF3AE4F006CE4AF /* toriApp.swift */,
+				168AF5BD2BF3AE4F006CE4AF /* ContentView.swift */,
+				168AF5BF2BF3AE50006CE4AF /* Assets.xcassets */,
+				168AF5C12BF3AE50006CE4AF /* Preview Content */,
+			);
+			path = tori;
+			sourceTree = "<group>";
+		};
+		168AF5C12BF3AE50006CE4AF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				168AF5C22BF3AE50006CE4AF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		168AF5CB2BF3AE50006CE4AF /* toriTests */ = {
+			isa = PBXGroup;
+			children = (
+				168AF5CC2BF3AE50006CE4AF /* toriTests.swift */,
+			);
+			path = toriTests;
+			sourceTree = "<group>";
+		};
+		168AF5D52BF3AE50006CE4AF /* toriUITests */ = {
+			isa = PBXGroup;
+			children = (
+				168AF5D62BF3AE50006CE4AF /* toriUITests.swift */,
+				168AF5D82BF3AE50006CE4AF /* toriUITestsLaunchTests.swift */,
+			);
+			path = toriUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		168AF5B72BF3AE4F006CE4AF /* tori */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 168AF5DC2BF3AE50006CE4AF /* Build configuration list for PBXNativeTarget "tori" */;
+			buildPhases = (
+				168AF5B42BF3AE4F006CE4AF /* Sources */,
+				168AF5B52BF3AE4F006CE4AF /* Frameworks */,
+				168AF5B62BF3AE4F006CE4AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tori;
+			productName = tori;
+			productReference = 168AF5B82BF3AE4F006CE4AF /* tori.app */;
+			productType = "com.apple.product-type.application";
+		};
+		168AF5C72BF3AE50006CE4AF /* toriTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 168AF5DF2BF3AE50006CE4AF /* Build configuration list for PBXNativeTarget "toriTests" */;
+			buildPhases = (
+				168AF5C42BF3AE50006CE4AF /* Sources */,
+				168AF5C52BF3AE50006CE4AF /* Frameworks */,
+				168AF5C62BF3AE50006CE4AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				168AF5CA2BF3AE50006CE4AF /* PBXTargetDependency */,
+			);
+			name = toriTests;
+			productName = toriTests;
+			productReference = 168AF5C82BF3AE50006CE4AF /* toriTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		168AF5D12BF3AE50006CE4AF /* toriUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 168AF5E22BF3AE50006CE4AF /* Build configuration list for PBXNativeTarget "toriUITests" */;
+			buildPhases = (
+				168AF5CE2BF3AE50006CE4AF /* Sources */,
+				168AF5CF2BF3AE50006CE4AF /* Frameworks */,
+				168AF5D02BF3AE50006CE4AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				168AF5D42BF3AE50006CE4AF /* PBXTargetDependency */,
+			);
+			name = toriUITests;
+			productName = toriUITests;
+			productReference = 168AF5D22BF3AE50006CE4AF /* toriUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		168AF5B02BF3AE4F006CE4AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					168AF5B72BF3AE4F006CE4AF = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					168AF5C72BF3AE50006CE4AF = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 168AF5B72BF3AE4F006CE4AF;
+					};
+					168AF5D12BF3AE50006CE4AF = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 168AF5B72BF3AE4F006CE4AF;
+					};
+				};
+			};
+			buildConfigurationList = 168AF5B32BF3AE4F006CE4AF /* Build configuration list for PBXProject "tori" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 168AF5AF2BF3AE4F006CE4AF;
+			productRefGroup = 168AF5B92BF3AE4F006CE4AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				168AF5B72BF3AE4F006CE4AF /* tori */,
+				168AF5C72BF3AE50006CE4AF /* toriTests */,
+				168AF5D12BF3AE50006CE4AF /* toriUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		168AF5B62BF3AE4F006CE4AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				168AF5C32BF3AE50006CE4AF /* Preview Assets.xcassets in Resources */,
+				168AF5C02BF3AE50006CE4AF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		168AF5C62BF3AE50006CE4AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		168AF5D02BF3AE50006CE4AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		168AF5B42BF3AE4F006CE4AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				168AF5BE2BF3AE4F006CE4AF /* ContentView.swift in Sources */,
+				168AF5BC2BF3AE4F006CE4AF /* toriApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		168AF5C42BF3AE50006CE4AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				168AF5CD2BF3AE50006CE4AF /* toriTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		168AF5CE2BF3AE50006CE4AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				168AF5D92BF3AE50006CE4AF /* toriUITestsLaunchTests.swift in Sources */,
+				168AF5D72BF3AE50006CE4AF /* toriUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		168AF5CA2BF3AE50006CE4AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 168AF5B72BF3AE4F006CE4AF /* tori */;
+			targetProxy = 168AF5C92BF3AE50006CE4AF /* PBXContainerItemProxy */;
+		};
+		168AF5D42BF3AE50006CE4AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 168AF5B72BF3AE4F006CE4AF /* tori */;
+			targetProxy = 168AF5D32BF3AE50006CE4AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		168AF5DA2BF3AE50006CE4AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		168AF5DB2BF3AE50006CE4AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		168AF5DD2BF3AE50006CE4AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"tori/Preview Content\"";
+				DEVELOPMENT_TEAM = 87YLKK29V4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-fahadmunawar.tori";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		168AF5DE2BF3AE50006CE4AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"tori/Preview Content\"";
+				DEVELOPMENT_TEAM = 87YLKK29V4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-fahadmunawar.tori";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		168AF5E02BF3AE50006CE4AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87YLKK29V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-fahadmunawar.toriTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tori.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tori";
+			};
+			name = Debug;
+		};
+		168AF5E12BF3AE50006CE4AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87YLKK29V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-fahadmunawar.toriTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tori.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/tori";
+			};
+			name = Release;
+		};
+		168AF5E32BF3AE50006CE4AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87YLKK29V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-fahadmunawar.toriUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = tori;
+			};
+			name = Debug;
+		};
+		168AF5E42BF3AE50006CE4AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87YLKK29V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-fahadmunawar.toriUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = tori;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		168AF5B32BF3AE4F006CE4AF /* Build configuration list for PBXProject "tori" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				168AF5DA2BF3AE50006CE4AF /* Debug */,
+				168AF5DB2BF3AE50006CE4AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		168AF5DC2BF3AE50006CE4AF /* Build configuration list for PBXNativeTarget "tori" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				168AF5DD2BF3AE50006CE4AF /* Debug */,
+				168AF5DE2BF3AE50006CE4AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		168AF5DF2BF3AE50006CE4AF /* Build configuration list for PBXNativeTarget "toriTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				168AF5E02BF3AE50006CE4AF /* Debug */,
+				168AF5E12BF3AE50006CE4AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		168AF5E22BF3AE50006CE4AF /* Build configuration list for PBXNativeTarget "toriUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				168AF5E32BF3AE50006CE4AF /* Debug */,
+				168AF5E42BF3AE50006CE4AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 168AF5B02BF3AE4F006CE4AF /* Project object */;
+}
