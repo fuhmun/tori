@@ -42,6 +42,7 @@
 		168AF61E2BF3BDF6006CE4AF /* BackSmallCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF61D2BF3BDF6006CE4AF /* BackSmallCardView.swift */; };
 		168AF6202BF3BE3A006CE4AF /* TipKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF61F2BF3BE3A006CE4AF /* TipKit.swift */; };
 		168AF6232BF3C025006CE4AF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 168AF6222BF3C025006CE4AF /* SDWebImageSwiftUI */; };
+		168AF6252BF435A1006CE4AF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6242BF435A1006CE4AF /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		168AF61B2BF3BDE6006CE4AF /* FrontSmallCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontSmallCardView.swift; sourceTree = "<group>"; };
 		168AF61D2BF3BDF6006CE4AF /* BackSmallCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackSmallCardView.swift; sourceTree = "<group>"; };
 		168AF61F2BF3BE3A006CE4AF /* TipKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipKit.swift; sourceTree = "<group>"; };
+		168AF6242BF435A1006CE4AF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				168AF5FA2BF3BB09006CE4AF /* Views */,
 				168AF6102BF3BCD9006CE4AF /* Models */,
 				168AF5E92BF3B2FC006CE4AF /* OpenAIViewModel.swift */,
+				168AF6242BF435A1006CE4AF /* Constants.swift */,
 				168AF5EB2BF3B365006CE4AF /* OpenAIView.swift */,
 				168AF5ED2BF3B385006CE4AF /* OpenAIService.swift */,
 				168AF5BF2BF3AE50006CE4AF /* Assets.xcassets */,
@@ -398,6 +401,7 @@
 				168AF5F22BF3B4A2006CE4AF /* SuggestionView.swift in Sources */,
 				168AF5EE2BF3B385006CE4AF /* OpenAIService.swift in Sources */,
 				168AF6162BF3BD36006CE4AF /* LocationManager.swift in Sources */,
+				168AF6252BF435A1006CE4AF /* Constants.swift in Sources */,
 				168AF5EC2BF3B365006CE4AF /* OpenAIView.swift in Sources */,
 				168AF5E62BF3B240006CE4AF /* Model.swift in Sources */,
 				168AF5EA2BF3B2FC006CE4AF /* OpenAIViewModel.swift in Sources */,
