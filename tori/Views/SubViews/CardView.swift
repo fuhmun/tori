@@ -14,11 +14,13 @@ struct CardView: View {
     
     var geoProx : GeometryProxy
     var activityCards: Activity
+    @ObservedObject var randomActivity: YelpAPI
     
     @State private var cardFlipped: Bool = false
     @State private var dragOffset: CGSize = CGSize.zero
-    @State private var colorOverlay: Color = .clear
-    @State var frontCardIndex = 0
+    @State private var colorOverlay: Color = .white.opacity(0.25)
+//    @State var frontCardIndex: Int
+    var removal: (( )-> Void)? = nil
     
     var body: some View {
         
@@ -73,6 +75,7 @@ struct CardView: View {
             .onTapGesture {
                 cardFlipped.toggle()
             }
+            .animation(.bouncy, value: dragOffset)
             .offset(x: dragOffset.width, y: dragOffset.height * 0.4)
             .rotationEffect(.degrees(Double(dragOffset.width / 40)))
             .gesture(
@@ -95,19 +98,40 @@ struct CardView: View {
         
     }
     
-    //    func cardOffset(for index: Int) -> CGFloat {
-    //        return 0
-    //    }
-    
     func swipeCard(width: CGFloat) {
         switch width {
         case -500...(-150):
             print("Disliked")
             dragOffset = CGSize(width: -500, height: 0)
+
+                removal?()
+            
+            if (randomActivity.foundActivities.count == 5)  {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    dragOffset = .zero
+                    colorOverlay = .white.opacity(0.25)
+                }
+                Task {
+                    await randomActivity.retrieveBusiness(cat: ["coffee"], lim: 5, sort: "distance", rad: 40000)
+                }
+            }
             
         case 150...500:
             print("Liked")
             dragOffset = CGSize(width: 500, height: 0)
+
+                removal?()
+            
+            if (randomActivity.foundActivities.count == 5)  {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    dragOffset = .zero
+                    colorOverlay = .white.opacity(0.25)
+                }
+                Task {
+                    await randomActivity.retrieveBusiness(cat: ["coffee"], lim: 5, sort: "distance", rad: 40000)
+                }
+            }
+            
         default:
             dragOffset = .zero
         }
@@ -122,7 +146,7 @@ struct CardView: View {
             print("Liking")
             colorOverlay = .green
         default:
-            colorOverlay = .clear
+            colorOverlay = .white.opacity(0.25)
         }
     }
     

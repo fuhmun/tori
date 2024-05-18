@@ -108,7 +108,7 @@ struct Region: Decodable {
     var center: Coordinates?
 }
 
-class YelpAPI {
+class YelpAPI : ObservableObject {
     
     @Published var foundActivities: [Activity] = []
     
@@ -144,9 +144,9 @@ class YelpAPI {
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         
         let queryItems: [URLQueryItem] = [
-            URLQueryItem(name: "latitude", value: /*String(42.331429)*/String(location.coordinate.latitude)),
-            URLQueryItem(name: "longitude", value: /*String(-83.045753)*/String(location.coordinate.longitude)),
-            URLQueryItem(name: "open_now", value: "true"),
+            URLQueryItem(name: "latitude", value: String(location.coordinate.latitude)),
+            URLQueryItem(name: "longitude", value: String(location.coordinate.longitude)),
+//            URLQueryItem(name: "open_now", value: "true"),
             URLQueryItem(name: "categories" , value: cate),
             URLQueryItem(name: "limit" , value: String(lim)),
 //            URLQueryItem(name: "sort_by" , value: sort)
@@ -182,15 +182,16 @@ class YelpAPI {
                 
                 if let activites = response.businesses {
                     DispatchQueue.main.async {
-                        self.foundActivities = activites
+                        self.foundActivities.append(contentsOf: activites)
+//                        self.foundActivities.append(contentsOf: activites)
                     }
                 }
                 
                 if let activites = response.businesses {
                     for activity in activites {
                         print("Name: \(activity.name ?? "Not Found")")
-                        print("Distance: \(activity.distance ?? 0) m")
-                        print("Image URL: \(activity.image_url ?? "Not Found")")
+//                        print("Distance: \(activity.distance ?? 0) m")
+//                        print("Image URL: \(activity.image_url ?? "Not Found")")
                     }
                 }
                 
