@@ -10,9 +10,9 @@ import Alamofire
 
 class OpenAIService {
     private let endpointURL = "https://api.openai.com/v1/chat/completions"
-    func sendMesaage(message: [Message]) async -> OpenAIChatResponse? {
-        let openAIMessages = message.map({OpenAIChatMessage(role: $0.role, content: $0.content)})
-        let body = OpenAIChatBody.init(model: "gpt-3.5-turbo", messages: openAIMessages)
+    func sendMesaage(message: Message) async throws -> OpenAIChatResponse? {
+        let openAIMessage = OpenAIChatMessage(role: message.role, content: message.content)
+        let body = OpenAIChatBody(model: "gpt-3.5-turbo", messages: [openAIMessage])
         
         let headers: HTTPHeaders = [
             "Authorization" : "Bearer \(Constants.OpenAIKey)"

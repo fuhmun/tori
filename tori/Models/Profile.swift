@@ -7,17 +7,20 @@
 
 import Foundation
 import CoreLocation
+import SwiftData
 
-class Profile {
-    let ID: Int
+class Profile: ObservableObject {
     let username: String
-    var preferences = Preferences()
-    var likes: [String] = []
-    var dislikes: [String] = []
-    var favorites: [String] = []    // need to change the type alias for favs
+    @Published var categories
+    @Published var preferences = Preferences()
+    @Published var likes: [Activity] = []
+    @Published var dislikes: [Activity] = []
+    @Published var favorites: [Activity] = []
+    @Published var mustTrys: [Activity] = []
+    @Published var tried: [Activity] = []
+    @Published var neverAgain: [String] = []
 
-    init(ID: Int, username: String, preferences: Preferences = Preferences()) {
-        self.ID = ID
+    init(username: String, preferences: Preferences = Preferences()) {
         self.username = username
         self.preferences = preferences
     }
@@ -27,33 +30,39 @@ class Profile {
         self.preferences = newPreferences
     }
 
-    func addFavorite(place: String) {   // array of yelp class that will be used when passing in to favs
-        favorites.append(place)
+    func addFavorite(place: Activity) {   // array of yelp class that will be used when passing in to favs
+        if favorites.contains(place) {
+            favorites.removeAll{ $0 == place }  //removes from fav
+        }
+        else { favorites.append(place) }
     }
 
-    func removeFavorite(place: String) {
+    func removeFavorite(place: Activity) {
         if let index = favorites.firstIndex(of: place) {
             favorites.remove(at: index)
         }
     }
 }
 
-struct Preferences {
-    var diet: Dietary = .everything
-    var priceLimit: Int = 3 // default
-    var distanceLimit: Int = 10 // default
-    var travel: Bool = false
-    var favoriteAreas: [String] = []
-    var drinker: Bool = false
-    var smoker: Bool = false
+
+class Preferences: ObservableObject {
+    @Published var diet: Dietary = .everything  //default
+    @Published var priceLimit: Int = 3  //default
+    @Published var distanceLimit: Int = 10  //default
+    @Published var favoriteAreas: [String] = ["Taco Bell", "McDonalds"]
+    @Published var drinker: Bool = false
+    @Published var smoker: Bool = false
 }
 
-enum Dietary {
-    case everything
-    case carnivore
-    case vegetarian
-    case vegan
-    case halal
-    case pescetarian
+enum Dietary: String {
+    case everything = "No food restrictions"
+    case carnivore = "Carnivore"
+    case vegetarian = "Vegetarian"
+    case vegan = "Vegan"
+    case halal = "Halal"
+    case pescetarian = "Pescetarian"
 }
 
+struct User {
+    var topCategories: [yelpCategories] = [.activeLife, .food, .nightLife, .shopping, .restaurants]    //append the categories they selected from onboarding
+}
