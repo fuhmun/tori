@@ -9,8 +9,22 @@ import Foundation
 import SwiftUI
 
 struct SplashScreenView: View {
+    
+    @State var onScreen: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Image("Splash")
+                .ignoresSafeArea(.all)
+                .background()
+        }
+        .onAppear() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                withAnimation {
+                    self.onScreen = true
+                }
+            }
+        }
     }
 }
 

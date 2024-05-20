@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OpenAIView: View {
     @ObservedObject var profile: Profile
-    @ObservedObject var viewModel = OpenAIViewModel()
+    @State private var generateSuggestion: Suggestion = Suggestion(name: "", description: "")
     var body: some View {
         VStack {
             HStack {
@@ -27,14 +27,20 @@ struct OpenAIView: View {
         .padding()
     }
     func sendMessage() {
-        let message = "Here are details of our user: Diet: \(profile.preferences.diet), Price limit: \(profile.preferences.priceLimit), Max distance to travel: \(profile.preferences.distanceLimit), Drinker: \(profile.preferences.drinker), Smoker: \(profile.preferences.smoker), Favorite places: \(profile.preferences.favoriteAreas), Liked activities: \(profile.likes), Disliked activities: \(profile.dislikes)"
         Task {
-            let response = await viewModel.sendMessage(userMessage: message)
-            print("Recieved response: \(response)")
+            do {
+                generateSuggestion = Suggestion(name: "", description: "")
+                let result = try await NewOpenAIService.shared.sendPromptToChatGPT()
+                print(result)
+                generateSuggestion = Suggestion(name: result.name, description: result.description)
+            } catch {
+                print(error.localizedDescription)
+                generateSuggestion = Suggestion(name: "", description: "")
+            }
         }
     }
 }
 
 #Preview {
-    OpenAIView(profile: Profile(username: "Fahad", preferences: Preferences()))
+    OpenAIView(profile: Profile(preferences: Preferences()))
 }

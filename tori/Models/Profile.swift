@@ -10,7 +10,6 @@ import CoreLocation
 import SwiftData
 
 class Profile: ObservableObject {
-    let username: String
     @Published var preferences = Preferences()
     @Published var likes: [Activity] = []
     @Published var dislikes: [Activity] = []
@@ -19,8 +18,7 @@ class Profile: ObservableObject {
     @Published var tried: [Activity] = []
     @Published var neverAgain: [String] = []
 
-    init(username: String, preferences: Preferences = Preferences()) {
-        self.username = username
+    init(preferences: Preferences = Preferences()) {
         self.preferences = preferences
     }
 
@@ -46,8 +44,8 @@ class Profile: ObservableObject {
 
 class Preferences: ObservableObject {
     @Published var diet: Dietary = .everything  //default
-    @Published var priceLimit: Int = 3  //default
-    @Published var distanceLimit: Int = 10  //default
+    @Published var priceLimit: String = "$10"  //default
+    @Published var distanceLimit: String = "10 miles"  //default
     @Published var favoriteAreas: [String] = ["Taco Bell", "McDonalds"]
     @Published var drinker: Bool = false
     @Published var smoker: Bool = false

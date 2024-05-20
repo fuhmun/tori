@@ -12,13 +12,16 @@ enum HTTPMethod: String {
     case get = "GET"
 }
 
+
 class NewOpenAIService {
     
     static let shared = NewOpenAIService()
     
+    private var profile = Profile()
+    
     private init() {}
     
-    private func generateAIRequest(httpMethod: HTTPMethod, message: String) throws -> URLRequest {
+    private func generateAIRequest(httpMethod: HTTPMethod) throws -> URLRequest {
         guard let url = URL(string: "https://api.openai.com/v1/chat/completions") else {
             throw URLError(.badURL)
         }
@@ -33,25 +36,20 @@ class NewOpenAIService {
         urlRequest.addValue("Bearer \(Constants.OpenAIKey)", forHTTPHeaderField: "Authorization")
         //Body
         //system message being sent to chatgpt before
-        let systemMessage = GPTMessage(role: "system", content: "I want you to be my concierge. I want you to generate m")
-        let userMessage = GPTMessage(role: "user", content: message)
-        let ingredients = GPTFunctionProperty(type: "string", description: "The available ingredients are \(message). Give me the ingredients seperated by a whitespace, NO commas.")
-        let recipe = GPTFunctionProperty(type: "string", description: "The recommended recipe to make.")
-        let description = GPTFunctionProperty(type: "string", description: "Here is a short detailed description of this recipe. It should be 15 words or less and not be the same as the recipe name.")
-        let instructions = GPTFunctionProperty(type: "string", description: "Here are detailed instructions for this recipe that are numbered for each step. Each step should start on a new line and have a title for each step.")
-        let timeToCook = GPTFunctionProperty(type: "string", description: "Here is how long it takes to cook this recipe in minutes and give the number only. For example: 20")
+        let systemMessage = GPTMessage(role: "system", content: "I want you to be my concierge. I want you to generate me an activity to do based on information about me. Location: Detroit, Diet: \(Preferences().$diet), Price limit: \(Preferences().priceLimit), Distance: \(Preferences().distanceLimit), Drinker: \(Preferences().drinker), Smoker: \(Preferences().smoker). Generate me the name ofone activity to do that aligns with my preferences. Only the name of the place, no extra words. For example: Taco Bell")
+        let likedActivities = GPTFunctionProperty(type: "string", description: "The liked activities are \(profile.likes).")
+        let suggestion = GPTFunctionProperty(type: "string", description: "The name of the recommended suggestion for me.")
+        let description = GPTFunctionProperty(type: "string", description: "Here is a short detailed description of the activity. It should be 15 words or less and not be the same as the name of the activity.")
 
         let params: [String: GPTFunctionProperty] = [
-            "ingredients": ingredients,
-            "instructions": instructions,
-            "recipe": recipe,
-            "timeToCook": timeToCook,
+            "likedActivities": likedActivities,
+            "suggestion": suggestion,
             "description": description
         ]
         
-        let functionParam = GPTFunctionParam(type: "object", properties: params, required: ["ingredients", "recipe", "instructions", "timeToCook", "description"])
-        let function = GPTFunction(name: "get_recipe", description: "Get the recipe with the given ingredients", parameters: functionParam)
-        let payload = GPTChatPayload(model: "gpt-3.5-turbo-0613", messages: [systemMessage, userMessage], functions: [function])
+        let functionParam = GPTFunctionParam(type: "object", properties: params, required: ["likedActivities", "suggestion", "description"])
+        let function = GPTFunction(name: "get_suggestion", description: "Get the suggestion based on given information", parameters: functionParam)
+        let payload = GPTChatPayload(model: "gpt-3.5-turbo", messages: [systemMessage], functions: [function])
         
         let jsonData = try JSONEncoder().encode(payload)
         
@@ -59,8 +57,8 @@ class NewOpenAIService {
         return urlRequest
     }
     
-    func sendPromptToChatGPT(message: String) async throws -> (RecipeResponse) {
-        let urlRequest = try generateAIRequest(httpMethod: .post, message: message)
+    func sendPromptToChatGPT() async throws -> (SuggestionResponse) {
+        let urlRequest = try generateAIRequest(httpMethod: .post)
         
         let (data, _) = try await URLSession.shared.data(for: urlRequest)
         
@@ -69,7 +67,7 @@ class NewOpenAIService {
         guard let argData = args.data(using: .utf8) else {
             throw URLError(.badURL)
         }
-        let response = try JSONDecoder().decode(RecipeResponse.self, from: argData)
+        let response = try JSONDecoder().decode(SuggestionResponse.self, from: argData)
         
         return (response)
         
@@ -128,11 +126,17 @@ struct GPTFunctionCall: Decodable {
     let arguments: String
 }
 
-struct RecipeResponse: Decodable {
-    let ingredients: String
-    let recipe: String
-    let instructions: String
-    let timeToCook: String
+struct SuggestionResponse: Decodable {
+    let name: String
     let description: String
 }
 
+class Suggestion {
+    var name: String
+    var description: String
+    
+    init(name: String = "", description: String = "") {
+        self.name = name
+        self.description = description
+    }
+}
