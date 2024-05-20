@@ -19,6 +19,7 @@ struct CardView: View {
     @State private var cardFlipped: Bool = false
     @State private var dragOffset: CGSize = CGSize.zero
     @State private var colorOverlay: Color = .white.opacity(0.25)
+    @State private var cardOpacity: Double = 1.0
 //    @State var frontCardIndex: Int
     var removal: (( )-> Void)? = nil
     
@@ -42,7 +43,8 @@ struct CardView: View {
                                                 .font(.title)
                                         }
                                         if let distance = activityCards.distance {
-                                            Text("\(distance) m")
+                                            let miles = distance * 0.000621371
+                                            Text(String(format: "%.2f mi", miles))
                                         }
                                     }
                                         .padding(geoProx.size.height/50)
@@ -64,6 +66,7 @@ struct CardView: View {
                 .clipShape(
                     RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: .continuous)
                 )
+                .opacity(cardOpacity)
                 .shadow(color: colorOverlay, radius: 10)
                 .rotation3DEffect(
                     cardFlipped ? Angle(degrees: 180) : .zero,
@@ -103,16 +106,22 @@ struct CardView: View {
         case -500...(-150):
             print("Disliked")
             dragOffset = CGSize(width: -500, height: 0)
+            cardOpacity = 0
 
-                removal?()
+            removal?()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                dragOffset = .zero
+                colorOverlay = .white.opacity(0.25)
+                if cardFlipped {
+                    cardFlipped.toggle()
+                }
+                cardOpacity = 1.0
+            }
             
             if (randomActivity.foundActivities.count == 5)  {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    dragOffset = .zero
-                    colorOverlay = .white.opacity(0.25)
-                }
                 Task {
-                    await randomActivity.retrieveBusiness(cat: ["coffee"], lim: 5, sort: "distance", rad: 40000)
+                    await randomActivity.retrieveBusiness(cat: ["bar"], lim: 5, sort: "distance", rad: 40000)
                 }
             }
             
@@ -120,15 +129,20 @@ struct CardView: View {
             print("Liked")
             dragOffset = CGSize(width: 500, height: 0)
 
-                removal?()
+            removal?()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                dragOffset = .zero
+                colorOverlay = .white.opacity(0.25)
+                if cardFlipped {
+                    cardFlipped.toggle()
+                }
+                cardOpacity = 1.0
+            }
             
             if (randomActivity.foundActivities.count == 5)  {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    dragOffset = .zero
-                    colorOverlay = .white.opacity(0.25)
-                }
                 Task {
-                    await randomActivity.retrieveBusiness(cat: ["coffee"], lim: 5, sort: "distance", rad: 40000)
+                    await randomActivity.retrieveBusiness(cat: ["activelife"], lim: 5, sort: "distance", rad: 40000)
                 }
             }
             
