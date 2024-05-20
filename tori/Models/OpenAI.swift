@@ -33,7 +33,7 @@ class NewOpenAIService {
         urlRequest.addValue("Bearer \(Constants.OpenAIKey)", forHTTPHeaderField: "Authorization")
         //Body
         //system message being sent to chatgpt before
-        let systemMessage = GPTMessage(role: "system", content: "I want you to act as a recipe generator. I will provide you with a list of ingredients and you will suggest a unique recipe that can be created with them. You are also are a verifer for the recipies, if the ingredients are not edible, involves cannibalism towards humans, and harmful for human consumption, or involve any body parts in the ingredients, for example, human body parts, hands, ears, toes, fingers, blood, flesh, and electronics, then ALWAYS return the word \"ERROR\". Number the instructions and be thorough with explaining them with detailes and measurements. I want the recipes to be a maximum of 20 minutes, nothing more, and I want you to give me one detailed recipe. Keep in mind that I have majority of common seasonings and sauces that are within an average household. If the ingredients are entered in spanish translate the instructions for the recipe in spanish. If the ingredients are sent in arabic translate the instructions for the recipe in arabic. If ingredients are in english respond in english.")
+        let systemMessage = GPTMessage(role: "system", content: "I want you to be my concierge. I want you to generate m")
         let userMessage = GPTMessage(role: "user", content: message)
         let ingredients = GPTFunctionProperty(type: "string", description: "The available ingredients are \(message). Give me the ingredients seperated by a whitespace, NO commas.")
         let recipe = GPTFunctionProperty(type: "string", description: "The recommended recipe to make.")
