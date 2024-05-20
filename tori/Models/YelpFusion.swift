@@ -182,16 +182,13 @@ class YelpAPI : ObservableObject {
                 
                 if let activites = response.businesses {
                     DispatchQueue.main.async {
-                        self.foundActivities.append(contentsOf: activites)
-//                        self.foundActivities.append(contentsOf: activites)
+                        self.foundActivities.insert(contentsOf: activites, at: 0)
                     }
                 }
                 
                 if let activites = response.businesses {
                     for activity in activites {
                         print("Name: \(activity.name ?? "Not Found")")
-//                        print("Distance: \(activity.distance ?? 0) m")
-//                        print("Image URL: \(activity.image_url ?? "Not Found")")
                     }
                 }
                 

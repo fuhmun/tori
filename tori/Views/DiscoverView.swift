@@ -13,12 +13,12 @@ import SDWebImageSwiftUI
 extension View {
     func cardStack(at position: Int, in total : Int) -> some View {
         let offset = Double(total - position)
-        return self.offset(y: offset * -50)
+        return self.offset(y: offset * -30)
     }
     
     func cardScale(at position: Int, in total : Int) -> some View {
         let scale = Double(total - position)
-        return self.scaleEffect(1 - scale * 0.05)
+        return self.scaleEffect(1.1 - scale * 0.05)
     }
     
     func cardZOffest(at position: Int, in total : Int) -> some View {
