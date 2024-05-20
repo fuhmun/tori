@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 enum yelpCategories: String {
     case activeLife = "Active"
     case arts = "Leisure"
