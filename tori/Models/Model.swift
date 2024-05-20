@@ -43,6 +43,6 @@ func triedSuggestion(profile: Profile, tried: Activity) {
     } else { profile.tried.append(tried)}
 }
 
-func sendCategory(cat: yelpCategories) {
-    
+func findSuggestion(yelpCat: yelpCategories, sub: String) {
+    if var subcategories =
 }

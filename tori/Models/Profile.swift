@@ -11,7 +11,6 @@ import SwiftData
 
 class Profile: ObservableObject {
     let username: String
-    @Published var categories
     @Published var preferences = Preferences()
     @Published var likes: [Activity] = []
     @Published var dislikes: [Activity] = []
