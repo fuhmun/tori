@@ -113,7 +113,7 @@ class YelpAPI : ObservableObject {
     @Published var foundActivities: [Activity] = []
     
     // Fetches data using input parameters
-    func retrieveBusiness(cat: [String], lim: Int, sort: String, rad: Int) async {
+    func retrieveBusiness(cat: [String], lim: Int, sort: String, rad: Int, list: RandomCategory) async {
         
         let locationDataManager = LocationDataManager()
         
@@ -149,7 +149,7 @@ class YelpAPI : ObservableObject {
 //            URLQueryItem(name: "open_now", value: "true"),
             URLQueryItem(name: "categories" , value: cate),
             URLQueryItem(name: "limit" , value: String(lim)),
-//            URLQueryItem(name: "sort_by" , value: sort)
+//            URLQueryItem(name: "sort_by" , value: sort),
             URLQueryItem(name: "radius", value: String(rad))
         ]
         
@@ -186,16 +186,17 @@ class YelpAPI : ObservableObject {
                     }
                 }
                 
-                if let activites = response.businesses {
+                if let activites = response.businesses, !activites.isEmpty {
                     for activity in activites {
                         print("Name: \(activity.name ?? "Not Found")")
                     }
+                } else {
+                    Task {
+                        await self.retrieveBusiness(cat: [list.activities.randomElement() ?? "food"], lim: 10, sort: "distance", rad: 40000, list: list)
+                    }
                 }
-                
-            }  catch {
-                
+            } catch {
                 print("Error: \(error)")
-                
             }
         }
         .resume()
