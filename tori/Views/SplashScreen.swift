@@ -14,9 +14,14 @@ struct SplashScreenView: View {
     
     var body: some View {
         ZStack {
-            Image("Splash")
-                .ignoresSafeArea(.all)
-                .background()
+            Image("Background")
+                .ignoresSafeArea()
+            GeometryReader { geometry in
+                VStack {
+                    Image("Tori")
+                        .position(x: geometry.frame(in: .local).midX, y: geometry.size.height / 3)
+                }
+            }
         }
         .onAppear() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
