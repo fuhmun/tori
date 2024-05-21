@@ -15,6 +15,7 @@ struct CardView: View {
     var geoProx : GeometryProxy
     var activityCards: Activity
     @ObservedObject var randomActivity: YelpAPI
+    var activityList: RandomCategory
     
     @State private var cardFlipped: Bool = false
     @State private var dragOffset: CGSize = CGSize.zero
@@ -119,9 +120,27 @@ struct CardView: View {
                 cardOpacity = 1.0
             }
             
+            if (randomActivity.foundActivities.count == 8)  {
+                Task {
+                    await randomActivity.retrieveBusiness(cat: [activityList.activities.randomElement() ?? "food"], lim: 4, sort: "distance", rad: 40000, list: activityList)
+                }
+            }
+            
             if (randomActivity.foundActivities.count == 5)  {
                 Task {
-                    await randomActivity.retrieveBusiness(cat: ["bar"], lim: 5, sort: "distance", rad: 40000)
+                    await randomActivity.retrieveBusiness(cat: [activityList.activities.randomElement() ?? "food"], lim: 4, sort: "distance", rad: 40000, list: activityList)
+                }
+            }
+            
+            if (randomActivity.foundActivities.count == 2)  {
+                Task {
+                    await randomActivity.retrieveBusiness(cat: [activityList.activities.randomElement() ?? "food"], lim: 4, sort: "distance", rad: 40000, list: activityList)
+                }
+            }
+            
+            if (randomActivity.foundActivities.count == 0)  {
+                Task {
+                    await randomActivity.retrieveBusiness(cat: [activityList.activities.randomElement() ?? "food"], lim: 4, sort: "distance", rad: 40000, list: activityList)
                 }
             }
             
@@ -140,9 +159,27 @@ struct CardView: View {
                 cardOpacity = 1.0
             }
             
+            if (randomActivity.foundActivities.count == 8)  {
+                Task {
+                    await randomActivity.retrieveBusiness(cat: [activityList.activities.randomElement() ?? "food"], lim: 4, sort: "distance", rad: 40000, list: activityList)
+                }
+            }
+            
             if (randomActivity.foundActivities.count == 5)  {
                 Task {
-                    await randomActivity.retrieveBusiness(cat: ["activelife"], lim: 5, sort: "distance", rad: 40000)
+                    await randomActivity.retrieveBusiness(cat: [activityList.activities.randomElement() ?? "food"], lim: 4, sort: "distance", rad: 40000, list: activityList)
+                }
+            }
+            
+            if (randomActivity.foundActivities.count == 2)  {
+                Task {
+                    await randomActivity.retrieveBusiness(cat: [activityList.activities.randomElement() ?? "food"], lim: 4, sort: "distance", rad: 40000, list: activityList)
+                }
+            }
+            
+            if (randomActivity.foundActivities.count == 0)  {
+                Task {
+                    await randomActivity.retrieveBusiness(cat: [activityList.activities.randomElement() ?? "food"], lim: 4, sort: "distance", rad: 40000, list: activityList)
                 }
             }
             

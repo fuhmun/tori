@@ -32,6 +32,7 @@ struct DiscoverView: View {
     @StateObject private var randomActivity = YelpAPI()
     @State private var activitesLoaded: Bool = false
     @State private var cardOffset: Int = 0
+    @State private var activityList = RandomCategory()
     
     var body: some View {
         GeometryReader{ geoProx in
@@ -55,7 +56,7 @@ struct DiscoverView: View {
                     } else {
                         ZStack {
                             ForEach((randomActivity.foundActivities.indices), id: \.self) { card in
-                                CardView(geoProx: geoProx, activityCards: randomActivity.foundActivities[card], randomActivity: randomActivity) {
+                                CardView(geoProx: geoProx, activityCards: randomActivity.foundActivities[card], randomActivity: randomActivity, activityList: activityList) {
                                     withAnimation {
                                         removeCard(at: card)
                                     }
@@ -73,7 +74,7 @@ struct DiscoverView: View {
             .onAppear {
                 if randomActivity.foundActivities.isEmpty {
                     Task {
-                        await randomActivity.retrieveBusiness(cat: ["coffee"], lim: 10, sort: "distance", rad: 40000)
+                        await randomActivity.retrieveBusiness(cat: [activityList.activities.randomElement() ?? "food"], lim: 10, sort: "distance", rad: 40000, list: activityList)
                     }
                 }
             }
