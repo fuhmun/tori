@@ -14,12 +14,16 @@ struct SplashScreenView: View {
     
     var body: some View {
         ZStack {
-            Image("Background")
-                .ignoresSafeArea()
-            GeometryReader { geometry in
-                VStack {
-                    Image("Tori")
-                        .position(x: geometry.frame(in: .local).midX, y: geometry.size.height / 3)
+            if self.onScreen {
+                ContentView()
+            } else {
+                Image("Background")
+                    .ignoresSafeArea()
+                GeometryReader { geometry in
+                    VStack {
+                        Image("Tori")
+                            .position(x: geometry.frame(in: .local).midX, y: geometry.size.height / 3)
+                    }
                 }
             }
         }
