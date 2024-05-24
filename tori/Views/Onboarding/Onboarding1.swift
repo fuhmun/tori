@@ -1,19 +1,18 @@
 //
-//  OnBoarding.swift
+//  Onboarding1.swift
 //  tori
 //
-//  Created by Fahad Munawar on 5/14/24.
+//  Created by Fahad Munawar on 5/23/24.
 //
 
-import Foundation
 import SwiftUI
 
-struct OnBoarding: View {
+struct Onboarding1: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    OnBoarding()
+    Onboarding1()
 }

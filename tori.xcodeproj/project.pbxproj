@@ -45,6 +45,8 @@
 		168AF6252BF435A1006CE4AF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6242BF435A1006CE4AF /* Constants.swift */; };
 		168AF6272BF59B97006CE4AF /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6262BF59B97006CE4AF /* CategoryManager.swift */; };
 		168AF6292BF64B63006CE4AF /* CategoryIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6282BF64B63006CE4AF /* CategoryIconView.swift */; };
+		168AF62D2BFF6E75006CE4AF /* Onboarding1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF62C2BFF6E75006CE4AF /* Onboarding1.swift */; };
+		168AF62F2BFF738F006CE4AF /* OnBoarding2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF62E2BFF738F006CE4AF /* OnBoarding2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		168AF6242BF435A1006CE4AF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		168AF6262BF59B97006CE4AF /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
 		168AF6282BF64B63006CE4AF /* CategoryIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconView.swift; sourceTree = "<group>"; };
+		168AF62C2BFF6E75006CE4AF /* Onboarding1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1.swift; sourceTree = "<group>"; };
+		168AF62E2BFF738F006CE4AF /* OnBoarding2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +203,7 @@
 				168AF5EF2BF3B414006CE4AF /* ProfileView.swift */,
 				168AF5F32BF3B4C5006CE4AF /* DiscoverView.swift */,
 				168AF5F12BF3B4A2006CE4AF /* SuggestionView.swift */,
-				168AF5FB2BF3BB37006CE4AF /* OnBoarding.swift */,
+				168AF62B2BFE2A3C006CE4AF /* Onboarding */,
 				168AF5FD2BF3BB46006CE4AF /* SplashScreen.swift */,
 				168AF5FF2BF3BB64006CE4AF /* SubViews */,
 			);
@@ -263,6 +267,16 @@
 				168AF5ED2BF3B385006CE4AF /* OpenAIService.swift */,
 			);
 			path = OpenAI;
+			sourceTree = "<group>";
+		};
+		168AF62B2BFE2A3C006CE4AF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				168AF5FB2BF3BB37006CE4AF /* OnBoarding.swift */,
+				168AF62C2BFF6E75006CE4AF /* Onboarding1.swift */,
+				168AF62E2BFF738F006CE4AF /* OnBoarding2.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				168AF5FE2BF3BB46006CE4AF /* SplashScreen.swift in Sources */,
+				168AF62F2BFF738F006CE4AF /* OnBoarding2.swift in Sources */,
 				168AF61E2BF3BDF6006CE4AF /* BackSmallCardView.swift in Sources */,
 				168AF6182BF3BD82006CE4AF /* SwiftData.swift in Sources */,
 				168AF5F02BF3B414006CE4AF /* ProfileView.swift in Sources */,
@@ -428,6 +443,7 @@
 				168AF6122BF3BD05006CE4AF /* YelpFusion.swift in Sources */,
 				168AF5E82BF3B262006CE4AF /* Profile.swift in Sources */,
 				168AF5F42BF3B4C5006CE4AF /* DiscoverView.swift in Sources */,
+				168AF62D2BFF6E75006CE4AF /* Onboarding1.swift in Sources */,
 				168AF5BE2BF3AE4F006CE4AF /* ContentView.swift in Sources */,
 				168AF5BC2BF3AE4F006CE4AF /* toriApp.swift in Sources */,
 				168AF5FC2BF3BB37006CE4AF /* OnBoarding.swift in Sources */,
