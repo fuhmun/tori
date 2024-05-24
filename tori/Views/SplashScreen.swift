@@ -18,10 +18,15 @@ struct SplashScreenView: View {
                 ContentView()
             } else {
                 Image("Background")
+                    .resizable()
                     .ignoresSafeArea()
+                    .scaledToFill()
                 GeometryReader { geometry in
                     VStack {
                         Image("Tori")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geometry.size.width / 1.5, height: geometry.size.height / 4)
                             .position(x: geometry.frame(in: .local).midX, y: geometry.size.height / 3)
                     }
                 }

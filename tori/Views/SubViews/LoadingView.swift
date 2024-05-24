@@ -12,7 +12,9 @@ struct LoadingView: View {
     var body: some View {
         ZStack {
             Image("Background")
+                .resizable()
                 .ignoresSafeArea()
+                .scaledToFill()
             VStack {
                 Image("Pin")
                 Text("Loading your personalized suggestions…")
