@@ -9,47 +9,15 @@ import Foundation
 import SwiftUI
 import CoreLocation
 import SDWebImageSwiftUI
+import SwiftData
 
-
-//struct ActivityResponse: Decodable {
-//    var businesses: [Activity]
-//    var total: Int
-//    var region: Region
-//}
-//
-//// Variables pulled from the API call
-//struct Activity: Decodable {
-//    var name: String?
-//    var imageURL: String?
-//    var isClosed: String?
-//    var categories: [String]?
-//    var rating: String?
-//    var address: String?
-//    var distance: String?
-//    var price: String?
-//}
-//
-//struct Region: Decodable {
-//    var center: Coordinates
-//}
-//
-//struct Coordinates: Decodable {
-//    var longitude: Double
-//    var latitude: Double
-//}
-
-//struct ActivityRoot: Decodable, Identifiable {
-//    var id = UUID()
-//    let businesses: [ActivityResponse]
-//}
-
-struct ActivityResponse: Decodable {
+struct ActivityResponse: Decodable { // Protocols
     var businesses: [Activity]?
     var total: Int?
     var region: Region?
 }
 
-struct Activity: Decodable, Hashable, Equatable{
+struct Activity: Decodable, Hashable, Equatable {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
@@ -112,7 +80,6 @@ class YelpAPI : ObservableObject {
     
     @Published var foundActivities: [Activity] = []
     
-    // Fetches data using input parameters
     func retrieveBusiness(cat: [String], lim: Int, sort: String, rad: Int, list: RandomCategory) async {
         
         let locationDataManager = LocationDataManager()
@@ -146,7 +113,6 @@ class YelpAPI : ObservableObject {
         let queryItems: [URLQueryItem] = [
             URLQueryItem(name: "latitude", value: String(location.coordinate.latitude)),
             URLQueryItem(name: "longitude", value: String(location.coordinate.longitude)),
-//            URLQueryItem(name: "open_now", value: "true"),
             URLQueryItem(name: "categories" , value: cate),
             URLQueryItem(name: "limit" , value: String(lim)),
 //            URLQueryItem(name: "sort_by" , value: sort),
@@ -154,7 +120,6 @@ class YelpAPI : ObservableObject {
         ]
         
         components.queryItems = components.queryItems.map {$0 + queryItems} ?? queryItems
-        //        components.queryItems = (components.queryItems ?? []) + queryItems
         
         var request = URLRequest(url: components.url!)
         request.httpMethod = "GET"

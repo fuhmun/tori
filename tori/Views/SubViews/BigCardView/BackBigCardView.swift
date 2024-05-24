@@ -7,13 +7,22 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct BackBigCardView: View {
+    
+    var geoProx : GeometryProxy
+    var activityCards: Activity
+    @ObservedObject var randomActivity: YelpAPI
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Details")
+        }
+        .rotation3DEffect(Angle(degrees: 180), axis: (x: 0.0, y: 1.0, z: 0.0))
     }
 }
 
-#Preview {
-    BackBigCardView()
-}
+//#Preview {
+//    BackBigCardView()
+//}

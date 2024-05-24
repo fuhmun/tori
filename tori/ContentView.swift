@@ -5,28 +5,39 @@
 //  Created by Fahad Munawar on 5/3/24.
 //
 
+import Foundation
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     
+    @Environment(\.modelContext) var modelContext
+    @Query var userProfile: [Profile]
+    
+    init() {
+        UITabBar.appearance().backgroundColor = .black
+        UITabBar.appearance()
+    }
+    
     var body: some View {
         TabView{
-            DiscoverView()
-                .tabItem{
-                    Label("Discover",systemImage:"magnifyingglass")
-                }
             SuggestionView()
                 .tabItem{
-                    Label("Tori",systemImage:"house")
+                    Label("Tori",systemImage:"wand.and.stars")
+                }
+            DiscoverView()
+                .tabItem{
+                    Label("Discover",systemImage:"plus.magnifyingglass")
                 }
             ProfileView()
                 .tabItem{
-                    Label("Profile",systemImage:"person.crop.circle")
+                    Label("Profile",systemImage:"person.fill")
                 }
         }
+        .toolbarColorScheme(.light, for: .tabBar)
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}

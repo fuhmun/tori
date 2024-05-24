@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 import SDWebImageSwiftUI
+import SwiftData
 
 extension View {
     func cardStack(at position: Int, in total : Int) -> some View {
@@ -37,7 +38,9 @@ struct DiscoverView: View {
     var body: some View {
         GeometryReader{ geoProx in
             ZStack {
-                Color(.black)
+                Image("discoveryBG")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
                 VStack {
                     
@@ -47,11 +50,12 @@ struct DiscoverView: View {
                             .foregroundStyle(.white)
                             .padding()
                             .frame(maxWidth: geoProx.size.width/1.2, maxHeight: geoProx.size.height/1.2)
-                            .background(.black)
+                            .background(.clear)
                             .clipShape(
                                 RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: .continuous)
                             )
-                            .shadow(color: .white.opacity(0.25), radius: 10)
+                            .shadow(color: .white.opacity(0.2), radius: 10)
+                            .offset(y:-geoProx.size.height/10)
                         
                     } else {
                         ZStack {
@@ -65,7 +69,7 @@ struct DiscoverView: View {
                                 .cardScale(at: card, in: randomActivity.foundActivities.count - 1)
                                 .cardZOffest(at: card, in: randomActivity.foundActivities.count - 1)
                                 .allowsHitTesting(card == randomActivity.foundActivities.count - 1)
-                                .ignoresSafeArea()
+                                .offset(y:-geoProx.size.height/10)
                             }
                         }
                     }

@@ -5,6 +5,7 @@
 //  Created by Fahad Munawar on 5/16/24.
 //
 
+import Foundation
 import SwiftUI
 
 struct CategoryIconView: View {

@@ -7,13 +7,22 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct FilterView: View {
+    
+    var geoProx: GeometryProxy
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Filter")
+//        ScrollView {
+//            ForEach(yelpCategories) { category in 
+//                
+//            }
+//        }
     }
 }
 
-#Preview {
-    FilterView()
-}
+//#Preview {
+//    FilterView()
+//}

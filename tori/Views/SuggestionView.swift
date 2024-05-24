@@ -7,17 +7,33 @@
 
 import Foundation
 import SwiftUI
+import CoreLocation
+import SDWebImageSwiftUI
+import SwiftData
 
 struct SuggestionView: View {
+    
+    
+    
     var body: some View {
         GeometryReader { geoProx in
             ZStack {
-                Color(.black)
+                Image("SuggestionBG")
+                    .resizable()
+//                    .scaledToFill()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: geoProx.size.width, height: geoProx.size.height)
                     .ignoresSafeArea()
                 VStack {
-                    Text("Tori")
+                        
+                            SearchBarView(geoProx: geoProx)
+                            FilterView(geoProx: geoProx)
+                        
                 }
+                .foregroundStyle(.white)
+                // alex sucks at coding
             }
+//            .ignoresSafeArea()
         }
     }
 }

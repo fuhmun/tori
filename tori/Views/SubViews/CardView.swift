@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 import SDWebImageSwiftUI
+import SwiftData
 
 struct CardView: View {
     
@@ -19,9 +20,9 @@ struct CardView: View {
     
     @State private var cardFlipped: Bool = false
     @State private var dragOffset: CGSize = CGSize.zero
-    @State private var colorOverlay: Color = .white.opacity(0.25)
+    @State private var colorOverlay: Color = .white.opacity(0.2)
     @State private var cardOpacity: Double = 1.0
-//    @State var frontCardIndex: Int
+    //    @State var frontCardIndex: Int
     var removal: (( )-> Void)? = nil
     
     var body: some View {
@@ -30,37 +31,10 @@ struct CardView: View {
             VStack {
                 HStack {
                     if !cardFlipped {
-                        if let imageUrl = activityCards.image_url {
-                            AnimatedImage(url: URL(string: imageUrl))
-                                .resizable()
-                                .frame(width: geoProx.size.width/1.2, height: geoProx.size.height/1.2)
-                                .overlay(
-                                    LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .top, endPoint: .center)
-                                )
-                                .overlay(
-                                    VStack(alignment: .leading) {
-                                        if let name = activityCards.name {
-                                            Text(name)
-                                                .font(.title)
-                                        }
-                                        if let distance = activityCards.distance {
-                                            let miles = distance * 0.000621371
-                                            Text(String(format: "%.2f mi", miles))
-                                        }
-                                    }
-                                        .padding(geoProx.size.height/50)
-                                        .foregroundStyle(.white)
-                                    ,alignment: .topLeading
-                                )
-                            
-                        }
+                        FrontBigCardView(geoProx: geoProx, activityCards: activityCards, randomActivity: randomActivity)
                     } else {
-                        VStack {
-                            Text("Details")
-                        }
-                        .rotation3DEffect(Angle(degrees: 180), axis: (x: 0.0, y: 1.0, z: 0.0))
+                        BackBigCardView(geoProx: geoProx, activityCards: activityCards, randomActivity: randomActivity)
                     }
-                    
                 }
                 .frame(width: geoProx.size.width/1.2, height: geoProx.size.height/1.2)
                 .background(Color.white)
@@ -74,7 +48,6 @@ struct CardView: View {
                     axis: (x: 0.0, y: -1.0, z: 0.0)
                 )
                 .animation(.default, value: cardFlipped)
-                
             }
             .onTapGesture {
                 cardFlipped.toggle()
@@ -97,9 +70,7 @@ struct CardView: View {
                         }
                     }
             )
-            
         }
-        
     }
     
     func swipeCard(width: CGFloat) {
@@ -108,7 +79,7 @@ struct CardView: View {
             print("Disliked")
             dragOffset = CGSize(width: -500, height: 0)
             cardOpacity = 0
-
+            
             removal?()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -147,7 +118,7 @@ struct CardView: View {
         case 150...500:
             print("Liked")
             dragOffset = CGSize(width: 500, height: 0)
-
+            
             removal?()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -197,7 +168,7 @@ struct CardView: View {
             print("Liking")
             colorOverlay = .green
         default:
-            colorOverlay = .white.opacity(0.25)
+            colorOverlay = .white.opacity(0.20)
         }
     }
     
