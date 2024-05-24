@@ -7,10 +7,13 @@
 
 import Foundation
 import SwiftUI
+import CoreLocation
+import SDWebImageSwiftUI
+import SwiftData
 
 struct ProfileView: View {
+    
     var body: some View {
-        GeometryReader { geoProx in
             ZStack {
                 Color(.black)
                     .ignoresSafeArea()
@@ -18,7 +21,7 @@ struct ProfileView: View {
                     Text("Tori")
                 }
             }
-        }
+            .ignoresSafeArea()
     }
 }
 
