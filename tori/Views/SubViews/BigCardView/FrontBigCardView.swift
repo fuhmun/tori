@@ -22,27 +22,41 @@ struct FrontBigCardView: View {
         if let imageUrl = activityCards.image_url {
             AnimatedImage(url: URL(string: imageUrl))
                 .resizable()
-                .frame(width: geoProx.size.width/1.2, height: geoProx.size.height/1.2)
+                .frame(width: geoProx.size.width/1.25, height: geoProx.size.height/1.25)
                 .overlay(
                     LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .top, endPoint: .center)
                 )
                 .overlay(
-                    VStack(alignment: .leading) {
-                        if let name = activityCards.name {
-                            Text(name)
-                                .font(.title)
+                    HStack {
+                        VStack(alignment: .leading) {
+                            if let name = activityCards.name {
+                                Text(name)
+                                    .font(.title3)
+                            }
+                            if let city = activityCards.location?.city, let state = activityCards.location?.state {
+                                Text("\(city), \(state)")
+                            }
+                            if let distance = activityCards.distance {
+                                let miles = distance * 0.000621371
+                                Text(String(format: "%.2f mi", miles))
+                            }
                         }
-                        if let city = activityCards.location?.city, let state = activityCards.location?.state {
-                            Text("\(city), \(state)")
-                        }
-                        if let distance = activityCards.distance {
-                            let miles = distance * 0.000621371
-                            Text(String(format: "%.2f mi", miles))
+                        
+                        .foregroundStyle(.white)
+                        Spacer()
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "heart")
+                                .foregroundStyle(.white)
                         }
                     }
-                        .padding(geoProx.size.height/50)
-                        .foregroundStyle(.white)
-                    ,alignment: .topLeading
+                        .padding(geoProx.size.height/30)
+//                        .background(.red)
+                    
+                        ,alignment: .topLeading
+                        
+                    
                 )
         }
     }

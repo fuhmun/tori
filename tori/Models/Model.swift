@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CustomColor {
     static let grayBG = Color("grayBG")
+    static let grayUI = UIColor(grayBG)
 }
 
 //func likedSuggestion(profile: Profile, liked: Activity) {

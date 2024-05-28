@@ -9,15 +9,15 @@ import Foundation
 import SwiftUI
 import SwiftData
 
-enum yelpCategories: String {
+enum yelpCategories: String, CaseIterable{
     
     case activeLife = "Active"
     case arts = "Leisure"
     case beauty = "Relax"
     case food = "Food"
     case nightLife = "Night"
-    case shopping = "Shop"
-    case restaurants = "Restaurants"
+//    case shopping = "Shop"
+//    case restaurants = "Restaurants"
     case localFlavor = "Local"
     
     var background: Color {
@@ -39,8 +39,8 @@ enum yelpCategories: String {
             "fork.knife"
         case .nightLife:
             "music.quarternote.3"
-        case .shopping:
-            "storefront"
+//        case .shopping:
+//            "storefront"
         default:
             "figure"
         }

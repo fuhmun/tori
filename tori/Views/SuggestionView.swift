@@ -20,17 +20,17 @@ struct SuggestionView: View {
             ZStack {
                 Image("SuggestionBG")
                     .resizable()
-//                    .scaledToFill()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: geoProx.size.width, height: geoProx.size.height)
+                    .scaledToFit()
+                    .frame(width: geoProx.size.width)
                     .ignoresSafeArea()
                 VStack {
                         
                             SearchBarView(geoProx: geoProx)
-                            FilterView(geoProx: geoProx)
+                            FilterView()
                         
                 }
                 .foregroundStyle(.white)
+                
                 // alex sucks at coding
             }
 //            .ignoresSafeArea()
