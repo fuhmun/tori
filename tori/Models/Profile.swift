@@ -65,5 +65,5 @@ enum Dietary: String, Codable {
 }
 
 struct User {
-    var topCategories: [yelpCategories] = [.activeLife, .food, .nightLife, .shopping, .restaurants]    //append the categories they selected from onboarding
+    var topCategories: [yelpCategories] = [.activeLife, .food, .nightLife/*, .shopping, .restaurants*/]    //append the categories they selected from onboarding
 }

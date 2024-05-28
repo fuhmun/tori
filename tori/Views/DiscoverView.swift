@@ -40,7 +40,8 @@ struct DiscoverView: View {
             ZStack {
                 Image("discoveryBG")
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .scaledToFit()
+                    .frame(width: geoProx.size.width)
                     .ignoresSafeArea()
                 VStack {
                     
@@ -49,7 +50,7 @@ struct DiscoverView: View {
                         Text("Failed to load activities")
                             .foregroundStyle(.white)
                             .padding()
-                            .frame(maxWidth: geoProx.size.width/1.2, maxHeight: geoProx.size.height/1.2)
+                            .frame(maxWidth: geoProx.size.width/1.4, maxHeight: geoProx.size.height/1.4)
                             .background(.clear)
                             .clipShape(
                                 RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: .continuous)
@@ -69,7 +70,7 @@ struct DiscoverView: View {
                                 .cardScale(at: card, in: randomActivity.foundActivities.count - 1)
                                 .cardZOffest(at: card, in: randomActivity.foundActivities.count - 1)
                                 .allowsHitTesting(card == randomActivity.foundActivities.count - 1)
-                                .offset(y:-geoProx.size.height/10)
+                                .offset(y:geoProx.size.height/30)
                             }
                         }
                     }

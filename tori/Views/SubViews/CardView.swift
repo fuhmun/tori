@@ -36,7 +36,7 @@ struct CardView: View {
                         BackBigCardView(geoProx: geoProx, activityCards: activityCards, randomActivity: randomActivity)
                     }
                 }
-                .frame(width: geoProx.size.width/1.2, height: geoProx.size.height/1.2)
+                .frame(width: geoProx.size.width/1.25, height: geoProx.size.height/1.25)
                 .background(Color.white)
                 .clipShape(
                     RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: .continuous)

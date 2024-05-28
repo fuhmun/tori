@@ -15,7 +15,7 @@ struct ContentView: View {
     @Query var userProfile: [Profile]
     
     init() {
-        UITabBar.appearance().backgroundColor = .black
+        UITabBar.appearance().backgroundColor = CustomColor.grayUI
         UITabBar.appearance()
     }
     
