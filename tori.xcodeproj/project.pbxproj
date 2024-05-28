@@ -47,6 +47,13 @@
 		168AF6292BF64B63006CE4AF /* CategoryIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6282BF64B63006CE4AF /* CategoryIconView.swift */; };
 		168AF62D2BFF6E75006CE4AF /* Onboarding1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF62C2BFF6E75006CE4AF /* Onboarding1.swift */; };
 		168AF62F2BFF738F006CE4AF /* OnBoarding2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF62E2BFF738F006CE4AF /* OnBoarding2.swift */; };
+		168AF6332C00DB4A006CE4AF /* OnBoarding3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6322C00DB4A006CE4AF /* OnBoarding3.swift */; };
+		168AF6352C00DBAE006CE4AF /* OnBoarding4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6342C00DBAE006CE4AF /* OnBoarding4.swift */; };
+		168AF6372C00DBC7006CE4AF /* OnBoarding5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6362C00DBC7006CE4AF /* OnBoarding5.swift */; };
+		168AF6392C00DBE1006CE4AF /* OnBoarding6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF6382C00DBE1006CE4AF /* OnBoarding6.swift */; };
+		168AF63B2C0607A9006CE4AF /* MustTryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF63A2C0607A9006CE4AF /* MustTryView.swift */; };
+		168AF63D2C06083D006CE4AF /* VisitedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF63C2C06083D006CE4AF /* VisitedView.swift */; };
+		168AF63F2C060864006CE4AF /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF63E2C060864006CE4AF /* FavoritesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +114,13 @@
 		168AF6282BF64B63006CE4AF /* CategoryIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconView.swift; sourceTree = "<group>"; };
 		168AF62C2BFF6E75006CE4AF /* Onboarding1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1.swift; sourceTree = "<group>"; };
 		168AF62E2BFF738F006CE4AF /* OnBoarding2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2.swift; sourceTree = "<group>"; };
+		168AF6322C00DB4A006CE4AF /* OnBoarding3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3.swift; sourceTree = "<group>"; };
+		168AF6342C00DBAE006CE4AF /* OnBoarding4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding4.swift; sourceTree = "<group>"; };
+		168AF6362C00DBC7006CE4AF /* OnBoarding5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding5.swift; sourceTree = "<group>"; };
+		168AF6382C00DBE1006CE4AF /* OnBoarding6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding6.swift; sourceTree = "<group>"; };
+		168AF63A2C0607A9006CE4AF /* MustTryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MustTryView.swift; sourceTree = "<group>"; };
+		168AF63C2C06083D006CE4AF /* VisitedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedView.swift; sourceTree = "<group>"; };
+		168AF63E2C060864006CE4AF /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +232,9 @@
 				168AF6022BF3BBAB006CE4AF /* SmallCardView.swift */,
 				168AF61A2BF3BDC5006CE4AF /* SmallCardView */,
 				168AF6082BF3BC6F006CE4AF /* FilterView.swift */,
+				168AF63A2C0607A9006CE4AF /* MustTryView.swift */,
+				168AF63C2C06083D006CE4AF /* VisitedView.swift */,
+				168AF63E2C060864006CE4AF /* FavoritesView.swift */,
 				168AF60A2BF3BC7D006CE4AF /* SearchBarView.swift */,
 				168AF60C2BF3BC8A006CE4AF /* LoadingView.swift */,
 				168AF60E2BF3BCBB006CE4AF /* MessageView.swift */,
@@ -275,6 +292,10 @@
 				168AF5FB2BF3BB37006CE4AF /* OnBoarding.swift */,
 				168AF62C2BFF6E75006CE4AF /* Onboarding1.swift */,
 				168AF62E2BFF738F006CE4AF /* OnBoarding2.swift */,
+				168AF6322C00DB4A006CE4AF /* OnBoarding3.swift */,
+				168AF6342C00DBAE006CE4AF /* OnBoarding4.swift */,
+				168AF6362C00DBC7006CE4AF /* OnBoarding5.swift */,
+				168AF6382C00DBE1006CE4AF /* OnBoarding6.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -418,15 +439,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168AF6332C00DB4A006CE4AF /* OnBoarding3.swift in Sources */,
 				168AF5FE2BF3BB46006CE4AF /* SplashScreen.swift in Sources */,
+				168AF63F2C060864006CE4AF /* FavoritesView.swift in Sources */,
 				168AF62F2BFF738F006CE4AF /* OnBoarding2.swift in Sources */,
+				168AF6352C00DBAE006CE4AF /* OnBoarding4.swift in Sources */,
 				168AF61E2BF3BDF6006CE4AF /* BackSmallCardView.swift in Sources */,
 				168AF6182BF3BD82006CE4AF /* SwiftData.swift in Sources */,
 				168AF5F02BF3B414006CE4AF /* ProfileView.swift in Sources */,
 				168AF6032BF3BBAB006CE4AF /* SmallCardView.swift in Sources */,
 				168AF6072BF3BBDB006CE4AF /* BackBigCardView.swift in Sources */,
+				168AF6392C00DBE1006CE4AF /* OnBoarding6.swift in Sources */,
 				168AF60F2BF3BCBB006CE4AF /* MessageView.swift in Sources */,
 				168AF6272BF59B97006CE4AF /* CategoryManager.swift in Sources */,
+				168AF6372C00DBC7006CE4AF /* OnBoarding5.swift in Sources */,
 				168AF61C2BF3BDE6006CE4AF /* FrontSmallCardView.swift in Sources */,
 				168AF5F22BF3B4A2006CE4AF /* SuggestionView.swift in Sources */,
 				168AF5EE2BF3B385006CE4AF /* OpenAIService.swift in Sources */,
@@ -441,6 +467,8 @@
 				168AF6092BF3BC6F006CE4AF /* FilterView.swift in Sources */,
 				168AF6202BF3BE3A006CE4AF /* TipKit.swift in Sources */,
 				168AF6122BF3BD05006CE4AF /* YelpFusion.swift in Sources */,
+				168AF63D2C06083D006CE4AF /* VisitedView.swift in Sources */,
+				168AF63B2C0607A9006CE4AF /* MustTryView.swift in Sources */,
 				168AF5E82BF3B262006CE4AF /* Profile.swift in Sources */,
 				168AF5F42BF3B4C5006CE4AF /* DiscoverView.swift in Sources */,
 				168AF62D2BFF6E75006CE4AF /* Onboarding1.swift in Sources */,

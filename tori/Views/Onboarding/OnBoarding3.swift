@@ -1,30 +1,26 @@
 //
-//  OnBoarding2.swift
+//  OnBoarding3.swift
 //  tori
 //
-//  Created by Fahad Munawar on 5/23/24.
+//  Created by Fahad Munawar on 5/24/24.
 //
 
 import SwiftUI
 
-struct DietOption {
-    var name: String
+struct MoneyOption {
+    var amount: String
     var selected: Bool
 }
 
-struct OnBoarding2: View {
+struct OnBoarding3: View {
     @State var geometry: GeometryProxy
-    let indexRectangle: Int = 1
+    let indexRectangle: Int = 2
     
-    @State var diets: [[DietOption]] = [
-        [DietOption(name: "Vegan", selected: false), DietOption(name: "Vegetarian", selected: false)],
-        [DietOption(name: "Gluten Free", selected: false), DietOption(name: "Pescetarian", selected: false)],
-        [DietOption(name: "Carnivore", selected: false), DietOption(name: "Halal", selected: false)]
+    @State var money: [[MoneyOption]] = [
+        [MoneyOption(amount: "$", selected: false), MoneyOption(amount: "$$", selected: false)],
+        [MoneyOption(amount: "$$$", selected: false), MoneyOption(amount: "$$$$", selected: false)]
     ]
-    
     var body: some View {
-        //For the tab index at the top
-        //        GeometryReader { geometry in
         VStack {
             HStack {
                 ForEach(0..<6) { i in
@@ -41,26 +37,26 @@ struct OnBoarding2: View {
                     }
                 }
             }
-            Text("Dietary preferences?")
+            Text("Cost Preferences?")
                 .font(.system(.title, design: .serif))
                 .font(.title)
                 .foregroundColor(.black)
                 .padding(.all)
             
-            ForEach(0..<diets.count, id: \.self) { rowIndex in
+            ForEach(0..<money.count, id: \.self) { rowIndex in
                 HStack (spacing: 20) {
-                    ForEach(0..<diets[rowIndex].count, id: \.self) { columnIndex in
+                    ForEach(0..<money[rowIndex].count, id: \.self) { columnIndex in
                         Button(action: {
-                            diets[rowIndex][columnIndex].selected.toggle()
+                            money[rowIndex][columnIndex].selected.toggle()
                         }) {
-                            Text(diets[rowIndex][columnIndex].name)
+                            Text(money[rowIndex][columnIndex].amount)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.black)
                                 .frame(minWidth: 0, maxWidth: .infinity)
                                 .padding()
                                 .background(RoundedRectangle(cornerRadius: 25)
-                                    .fill(diets[rowIndex][columnIndex].selected ? Color.blue : Color.gray))
-                        }
+                                    .fill(money[rowIndex][columnIndex].selected ? Color.blue : Color.gray))
+                    }
                     }
                 }
                 .padding(.horizontal)
@@ -74,14 +70,11 @@ struct OnBoarding2: View {
         .clipShape(
             RoundedRectangle(cornerRadius: 25.0, style: .continuous)
         )
-        //Flattens two dimensional array and creates a new array of strings (names)
-        let selectedDiets = diets.flatMap { $0 }
-            .filter { $0.selected }
-            .map { $0.name }
+        
     }
+    
 }
 
-
 //#Preview {
-//    OnBoarding2()
+//    OnBoarding3()
 //}
