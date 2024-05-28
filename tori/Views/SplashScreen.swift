@@ -15,7 +15,7 @@ struct SplashScreenView: View {
     var body: some View {
         ZStack {
             if self.onScreen {
-                ContentView()
+                OnBoarding()
             } else {
                 Image("Background")
                     .resizable()

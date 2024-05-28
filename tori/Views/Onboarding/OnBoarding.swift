@@ -19,27 +19,51 @@ struct OnBoarding: View {
                     .ignoresSafeArea()
                     .scaledToFill()
                 VStack {
-                    Text("Lets ask a few questions to personalize your experience.")
-                        .font(.system(.title2, design: .serif))
-                        .multilineTextAlignment(.center)
-                        .padding()
                     TabView {
                         OnBoarding1(geometry: geometry)
                             .tabItem {
                                 Label("One", systemImage: "1.circle")
                             }
+                            .padding(.bottom)
                         
                         OnBoarding2(geometry: geometry)
                             .tabItem {
+                                Label("One", systemImage: "1.circle")
+                            }
+                            .padding(.bottom)
+                        
+                        OnBoarding3(geometry: geometry)
+                            .tabItem {
                                 Label("Two", systemImage: "1.circle")
                             }
+                            .padding(.bottom)
+                        
+                        OnBoarding4(geometry: geometry)
+                            .tabItem {
+                                Label("One", systemImage: "1.circle")
+                            }
+                            .padding(.bottom)
+                        
+                        OnBoarding5(geometry: geometry)
+                            .tabItem {
+                                Label("Two", systemImage: "1.circle")
+                            }
+                            .padding(.bottom)
+                        
+                        OnBoarding6(geometry: geometry)
+                            .tabItem {
+                                Label("One", systemImage: "1.circle")
+                            }
+                            .padding(.bottom)
                     }
-                    .tabViewStyle(.page(indexDisplayMode: .always))
                 }
+                
+                .tabViewStyle(.page(indexDisplayMode: .always))
             }
         }
     }
 }
+
 
 #Preview {
     OnBoarding()
