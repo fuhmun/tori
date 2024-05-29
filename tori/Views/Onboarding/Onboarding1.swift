@@ -12,13 +12,15 @@ struct OnBoarding1: View {
     @State var userName: String = ""
     var geometry: GeometryProxy
     let indexRectangle: Int = 0
+    @Binding var selectedTab: Int
     
     var body: some View {
         VStack {
-            Text("Lets ask a few questions to personalize your experience.")
-                .font(.system(.title2, design: .serif))
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
+//            Text("Hey there! Welcome to Tori. We're excited to see what you'll explore!")
+//                .font(.system(.title2, design: .serif))
+//                .multilineTextAlignment(.center)
+//                .padding(.horizontal)
+//                .foregroundColor(.white)
             VStack {
                 HStack {
                     ForEach(0..<6) { i in
@@ -35,11 +37,12 @@ struct OnBoarding1: View {
                         }
                     }
                 }
-                Text("What's your name?")
-                    .font(.system(.title, design: .serif))
+                Text("Hey there! Welcome to Tori. We're excited to see what you'll explore! \nFirst things first, what's your name?")
+                    .font(.system(.title2, design: .serif))
                     .font(.title)
                     .foregroundColor(.black)
                     .padding(.all)
+                    .multilineTextAlignment(.center)
                 
                 TextField (
                     "",
@@ -56,15 +59,22 @@ struct OnBoarding1: View {
                 .padding(.all)
                 Spacer()
                 
-                //            Button(action: { }, label: {
-                //                Text("Confirm")
-                //                    .font(.system(.title, design: .serif))
-                //                    .foregroundStyle(Color.white)
-                //                    .frame(width: geometry.size.width/1.3, height: geometry.size.height/11)
-                //                    .background(Color.blue)
-                //                    .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
-                //            })
-                //            .padding(.bottom)
+                Button {
+                    if userName != "" {
+                        initiateDelayedActions()
+                    }
+                } label: {
+                    Text("Confirm")
+                        .font(.system(.title, design: .serif))
+                        .foregroundStyle(Color.white)
+                        .frame(width: geometry.size.width/1.3, height: geometry.size.height/11)
+                        .background(RoundedRectangle(cornerRadius: 25.0, style: .continuous)
+                            .fill(userName != "" ? Color.blue : Color.gray))
+                }
+                
+                .buttonStyle(ScaleButtonStyle())
+                .padding(.bottom)
+                
             }
             .padding(.top)
             .frame(width: geometry.size.width/1.2, height: geometry.size.height/1.2)
@@ -74,6 +84,30 @@ struct OnBoarding1: View {
                 RoundedRectangle(cornerRadius: 25.0, style: .continuous)
             )
         }
+    }
+    private func initiateDelayedActions() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            withAnimation {
+                if self.userName != "" {
+                    self.selectedTab = 1
+                }
+            }
+        }
+    }
+}
+
+
+struct ScaleButtonStyle : ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.6 : 1.0)
+            .animation(.easeInOut, value: configuration.isPressed)
+    }
+}
+
+struct DefaultButtonStyle : ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
     }
 }
 
