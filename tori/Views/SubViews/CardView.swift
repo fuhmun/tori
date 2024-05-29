@@ -22,7 +22,6 @@ struct CardView: View {
     @State private var dragOffset: CGSize = CGSize.zero
     @State private var colorOverlay: Color = .white.opacity(0.2)
     @State private var cardOpacity: Double = 1.0
-    //    @State var frontCardIndex: Int
     var removal: (( )-> Void)? = nil
     
     var body: some View {

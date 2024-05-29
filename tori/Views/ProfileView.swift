@@ -11,9 +11,9 @@ struct ProfileView: View {
     @State var selected = 1
     var body: some View {
         ZStack{
-            Color(.blue)
+            Color(CustomColor.grayBG)
                 .ignoresSafeArea()
-                .opacity(0.3)
+//                .opacity(0.3)
             VStack{
                 ZStack{
                     RoundedRectangle(cornerRadius: 10)
@@ -21,8 +21,13 @@ struct ProfileView: View {
                         .frame(height: 215)
                         .foregroundStyle(.blue)
                     VStack{
-                        HStack{Spacer()
-                            Image(systemName: "gearshape.fill")
+                        HStack {
+                            Spacer()
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "gearshape.fill")
+                            }
                         }
                         .padding()
                         HStack{
@@ -31,22 +36,22 @@ struct ProfileView: View {
                                 .overlay( Text("JW")
                                     .font(.title3)
                                     .fontWeight(.bold))
+                                .padding(.leading, 15)
                             Text("Jazz W.")
                                 .fontWeight(.bold)
-                            
                                 .font(.largeTitle)
-                                .padding(.leading, 30)
+                                .padding(.leading, 15)
+                                .foregroundStyle(.white)
                             Spacer()
                             
                         }
                         .padding(.leading, 10)
-                    
-                        
                         Picker(selection: $selected, label: Text("")) {
                             Text("Must Try").tag(1)
-                            Text("Visted").tag(2)
+                            Text("Visited").tag(2)
                             Text("Favorites").tag(3)
                         }
+                        .padding([.leading, .trailing], 10)
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .foregroundStyle(.thinMaterial)
@@ -55,7 +60,8 @@ struct ProfileView: View {
                 ScrollView{
                     VStack{
                         if selected == 1 {
-                            MustTryView()}
+                            MustTryView()
+                        }
                         else if selected == 2{
                             VisitedView()
                         }

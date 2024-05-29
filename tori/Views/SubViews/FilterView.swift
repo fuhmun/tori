@@ -11,15 +11,26 @@ import SwiftData
 
 struct FilterView: View {
     
-    var geoProx: GeometryProxy
+    @State var isSelected: Bool = false
     
     var body: some View {
-        Text("Filter")
-//        ScrollView {
-//            ForEach(yelpCategories) { category in 
-//                
-//            }
-//        }
+        ScrollView(.horizontal, showsIndicators: false){
+            HStack(spacing: 27) {
+            ForEach(yelpCategories.allCases, id: \.self) { category in
+                    Button {
+                        isSelected.toggle()
+                    } label: {
+                        VStack {
+                            Image(systemName: category.icon)
+                                .foregroundStyle(isSelected ? .accent : .white)
+                            Text(category.rawValue)
+                                .font(.caption)
+                        }
+                    }
+//                    .padding(.horizontal, 12)
+                }
+            }
+        }
     }
 }
 

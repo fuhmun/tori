@@ -27,35 +27,64 @@ struct FrontBigCardView: View {
                     LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .top, endPoint: .center)
                 )
                 .overlay(
-                    HStack {
-                        VStack(alignment: .leading) {
-                            if let name = activityCards.name {
-                                Text(name)
-                                    .font(.title3)
+                    VStack {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                if let name = activityCards.name {
+                                    Text(name)
+                                        .font(.title3)
+                                }
+                                if let city = activityCards.location?.city, let state = activityCards.location?.state {
+                                    Text("\(city), \(state)")
+                                }
+                                if let distance = activityCards.distance {
+                                    let miles = distance * 0.000621371
+                                    Text(String(format: "%.2f mi", miles))
+                                }
                             }
-                            if let city = activityCards.location?.city, let state = activityCards.location?.state {
-                                Text("\(city), \(state)")
-                            }
-                            if let distance = activityCards.distance {
-                                let miles = distance * 0.000621371
-                                Text(String(format: "%.2f mi", miles))
-                            }
-                        }
-                        
-                        .foregroundStyle(.white)
-                        Spacer()
-                        Button {
                             
-                        } label: {
-                            Image(systemName: "heart")
-                                .foregroundStyle(.white)
+                            .foregroundStyle(.white)
+                            Spacer()
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "heart")
+                                    .foregroundStyle(.white)
+                            }
                         }
-                    }
                         .padding(geoProx.size.height/30)
-//                        .background(.red)
+                        Spacer()
+                        HStack {
+                            Button {
+                                
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .fill(.accent)
+                                        .frame(width: geoProx.size.width*0.15)
+                                    Image(systemName: "xmark")
+                                        .font(.largeTitle)
+                                        .foregroundStyle(.white)
+                                }
+                            }
+                            Spacer()
+                            Button {
+                                
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .fill(.accent)
+                                        .frame(width: geoProx.size.width*0.15)
+                                    Image(systemName: "checkmark")
+                                        .font(.largeTitle)
+                                        .foregroundStyle(.white)
+                                }
+                            }
+                        }
+                        .padding(geoProx.size.height/30)
+                    }
+                    ,alignment: .topLeading
                     
-                        ,alignment: .topLeading
-                        
                     
                 )
         }

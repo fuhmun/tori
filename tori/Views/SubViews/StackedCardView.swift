@@ -1,26 +1,29 @@
 //
-//  ContentView.swift
-//  Tori pages
+//  StackedCardView.swift
+//  tori
 //
-//  Created by Leon Singleton on 5/26/24.
+//  Created by Alexander Washington on 5/28/24.
 //
 
 import SwiftUI
 
-struct MustTryView: View {
+struct StackedCardView: View {
+
     @State private var selectedCardIndex: Int? = nil
-
-    @State private var mustTry = [
-        (name: "Activity A", description: "Delicious food A")
+    
+    @State private var Test = [
+        (name: "Activity A", description: "Delicious food A"),
+        (name: "Activity B", description: "Delicious food B"),
+        (name: "Activity C", description: "Delicious food C")
     ]
-
+    
     var body: some View {
         ZStack {
-            ForEach(0..<mustTry.count, id: \.self) { index in
-                SmallCardView(restaurantName: mustTry[index].name,
-                         description: mustTry[index].description,
+            ForEach(0..<Test.count, id: \.self) { index in
+                SmallCardView(restaurantName: Test[index].name,
+                         description: Test[index].description,
                          isExpanded: self.selectedCardIndex == index)
-                    .offset(y: self.selectedCardIndex == index ? 0 : CGFloat(index) * 60)
+                    .offset(y: self.selectedCardIndex == index ? 0 : CGFloat(index) * 195)
                     .rotation3DEffect(
                         .degrees(self.selectedCardIndex == index ? 180 : 0),
                         axis: (x: 0, y: 2, z: 0)
@@ -39,11 +42,10 @@ struct MustTryView: View {
             }
         }
         .edgesIgnoringSafeArea(.all)
+        
     }
 }
 
-
-
-#Preview {
-    MustTryView()
-}
+//#Preview {
+//    StackedCardView()
+//}
