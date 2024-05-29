@@ -27,7 +27,7 @@ struct FavoritesView: View {
                         .degrees(self.selectedCardIndex == index ? 180 : 0),
                         axis: (x: 0, y: 2, z: 0)
                     )
-                    .animation(.spring())
+                    .animation(.spring(), value: self.selectedCardIndex == index)
                     .onTapGesture {
                         withAnimation {
                             if self.selectedCardIndex == index {

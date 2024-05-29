@@ -13,8 +13,6 @@ import SwiftData
 
 struct SuggestionView: View {
     
-    
-    
     var body: some View {
         GeometryReader { geoProx in
             ZStack {
@@ -24,16 +22,19 @@ struct SuggestionView: View {
                     .frame(width: geoProx.size.width)
                     .ignoresSafeArea()
                 VStack {
-                        
-                            SearchBarView(geoProx: geoProx)
-                            FilterView()
-                        
+                    SearchBarView(geoProx: geoProx)
+                        .padding()
+                    FilterView()
+                        .frame(width: geoProx.size.width*0.85)
+                    Spacer(minLength: geoProx.size.height*0.03)
+                    ScrollView {
+                        StackedCardView()
+                    }
                 }
                 .foregroundStyle(.white)
                 
                 // alex sucks at coding
             }
-//            .ignoresSafeArea()
         }
     }
 }

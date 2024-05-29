@@ -15,8 +15,21 @@ struct ContentView: View {
     @Query var userProfile: [Profile]
     
     init() {
-        UITabBar.appearance().backgroundColor = CustomColor.grayUI
-        UITabBar.appearance()
+        
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = CustomColor.grayUI
+        
+        tabBarAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.systemGray
+        tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+        
+        tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.accent
+                tabBarAppearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.accent]
+        
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+                if #available(iOS 15.0, *) {
+                    UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+                }
     }
     
     var body: some View {
@@ -34,7 +47,7 @@ struct ContentView: View {
                     Label("Profile",systemImage:"person.fill")
                 }
         }
-        .toolbarColorScheme(.light, for: .tabBar)
+//        .toolbarColorScheme(.light, for: .tabBar)
     }
 }
 
