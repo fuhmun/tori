@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class ActivityRoot: Identifiable {
+class ActivityRoot: Identifiable, Hashable {
     var id = UUID()
     var activity: [swiftActivity]
     

@@ -17,12 +17,14 @@ struct StackedCardView: View {
         (name: "Activity C", description: "Delicious food C")
     ]
     
+    var geoProx: GeometryProxy
+    
     var body: some View {
         ZStack {
             ForEach(0..<Test.count, id: \.self) { index in
                 SmallCardView(restaurantName: Test[index].name,
                          description: Test[index].description,
-                         isExpanded: self.selectedCardIndex == index)
+                              isExpanded: self.selectedCardIndex == index, geoProx: geoProx)
                     .offset(y: self.selectedCardIndex == index ? 0 : CGFloat(index) * 195)
                     .rotation3DEffect(
                         .degrees(self.selectedCardIndex == index ? 180 : 0),

@@ -11,8 +11,9 @@ import SwiftData
 struct Tag: Identifiable, Hashable {
     var id = UUID().uuidString
     var name: String
-    var size: CGFloat
-    var description: String?
+    var size: CGFloat = 0
+    var price: String?
+    var categories: [String]?
 }
 
 struct TagListView: View {
@@ -31,20 +32,20 @@ struct TagListView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
-//            ScrollView(.vertical, showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 10) {
-                    ForEach(getRows(geoProx),id: \.self) { rows in
-                        HStack(spacing:5) {
-                            ForEach(rows) { row in
-                                RowView(tag: row)
-                            }
+            //            ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 10) {
+                ForEach(getRows(geoProx),id: \.self) { rows in
+                    HStack(spacing:5) {
+                        ForEach(rows) { row in
+                            RowView(tag: row)
                         }
                     }
                 }
-                .frame(width: geoProx.size.width/1, alignment: .leading)
-                .padding(.vertical)
-//            }
-//            .frame(maxWidth: .infinity)
+            }
+            .frame(width: geoProx.size.width/1, alignment: .leading)
+            .padding(.vertical)
+            //            }
+            //            .frame(maxWidth: .infinity)
         }
         .onChange(of: tags) {
             updateTagSizes()
@@ -67,20 +68,30 @@ struct TagListView: View {
     func RowView(tag: Tag)->some View{
         HStack {
             Text(tag.name)
-                .foregroundStyle(.primary)
+                .font(.caption)
+                .foregroundStyle(.accent)
+                .padding(.horizontal, 10)
                 .padding(.vertical, 3)
-                .padding(.leading, 3)
                 .background(
-                    RoundedRectangle(cornerRadius: 5)
+                    RoundedRectangle(cornerRadius: 15)
                         .fill(.white)
                 )
                 .lineLimit(1)
+            
+            if let price = tag.price {
+                Text(price)
+                    .font(.caption)
+                    .foregroundStyle(.accent)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 3)
+                    .background(
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(.white)
+                    )
+                    .lineLimit(1)
+            }
         }
-        .overlay(
-            RoundedRectangle(cornerRadius: 5)
-//                .stroke(CustomColor.newRed, lineWidth: 1.2)
-        )
-        .padding(1)
+        .padding(.leading, 10)
     }
     
     func getIndex(tag: Tag)->Int {

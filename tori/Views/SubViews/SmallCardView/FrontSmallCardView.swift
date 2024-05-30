@@ -9,11 +9,19 @@ import Foundation
 import SwiftUI
 
 struct FrontSmallCardView: View {
+    
+    var geoProx: GeometryProxy
+    var test: Tag = Tag(name: "McDonalds", price: "$")
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            TagListView(tags: [test], geoProx: geoProx)
+                .padding(.leading, geoProx.size.width*0.12)
+            Spacer()
+        }
     }
 }
 
-#Preview {
-    FrontSmallCardView()
-}
+//#Preview {
+//    FrontSmallCardView()
+//}
