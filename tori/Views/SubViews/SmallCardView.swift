@@ -11,11 +11,13 @@ struct SmallCardView: View {
     var restaurantName: String
     var description: String
     var isExpanded: Bool
+    
+    var geoProx: GeometryProxy
 
     var body: some View {
         VStack {
             if isExpanded {
-                FrontSmallCardView()
+                BackSmallCardView()
 //                Text(restaurantName)
 //                    .font(.largeTitle)
 //                    .padding()
@@ -23,7 +25,7 @@ struct SmallCardView: View {
 //                    .padding()
 //                Spacer()
             } else {
-                BackSmallCardView()
+                FrontSmallCardView(geoProx: geoProx)
 //                Text(restaurantName)
 //                    .font(.title)
 //                    .foregroundColor(.white)

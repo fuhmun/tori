@@ -28,7 +28,7 @@ struct SuggestionView: View {
                         .frame(width: geoProx.size.width*0.85)
                     Spacer(minLength: geoProx.size.height*0.03)
                     ScrollView {
-                        StackedCardView()
+                        StackedCardView(geoProx: geoProx)
                     }
                 }
                 .foregroundStyle(.white)

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 import SDWebImageSwiftUI
+import SwiftData
 
 
 struct FrontBigCardView: View {
@@ -16,6 +17,9 @@ struct FrontBigCardView: View {
     var geoProx : GeometryProxy
     var activityCards: Activity
     @ObservedObject var randomActivity: YelpAPI
+    
+    @Environment(\.modelContext) var modelContextMus
+    @Query var mustTry: [ActivityRoot]
     
     var body: some View {
         
@@ -46,6 +50,8 @@ struct FrontBigCardView: View {
                             .foregroundStyle(.white)
                             Spacer()
                             Button {
+                                
+//                                let mustTryActivity =
                                 
                             } label: {
                                 Image(systemName: "heart")
