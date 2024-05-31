@@ -47,7 +47,7 @@ struct OnBoarding3: View {
                         }
                         else {
                             Rectangle()
-                                .fill(Color.black)
+                                .fill(Color.white)
                                 .opacity(0.8)
                                 .frame(width: geometry.size.width / 13, height: geometry.size.height / 90)
                         }
@@ -73,7 +73,7 @@ struct OnBoarding3: View {
                                     .frame(minWidth: 0, maxWidth: .infinity)
                                     .padding()
                                     .background(RoundedRectangle(cornerRadius: 25)
-                                        .fill(money[rowIndex][columnIndex].selected ? Color.blue : Color.gray))
+                                        .fill(money[rowIndex][columnIndex].selected ? Color.blue : Color.white))
                             }
                         }
                     }
@@ -89,21 +89,21 @@ struct OnBoarding3: View {
                     Text("Confirm")
                         .font(.system(.title, design: .serif))
                         .foregroundStyle(Color.white)
-                        .frame(width: geometry.size.width/1.3, height: geometry.size.height/11)
+                        .frame(width: geometry.size.width/3, height: geometry.size.height/11)
                         .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
                         .background(RoundedRectangle(cornerRadius: 25.0, style: .continuous)
-                            .fill(moneySelected ? Color.blue : Color.gray))
+                            .fill(moneySelected ? Color.blue : Color.red))
                 })
                 .buttonStyle(ScaleButtonStyle())
-                .padding(.bottom)
+                .padding(.vertical)
             }
             .padding(.top)
-            .frame(width: geometry.size.width/1.2, height: geometry.size.height/1.2)
-            .background(Color.white)
-            .opacity(0.6)
-            .clipShape(
-                RoundedRectangle(cornerRadius: 25.0, style: .continuous)
-            )
+//            .frame(width: geometry.size.width/1.2, height: geometry.size.height/1.2)
+//            .background(Color.white)
+//            .opacity(0.6)
+//            .clipShape(
+//                RoundedRectangle(cornerRadius: 25.0, style: .continuous)
+//            )
             Spacer()
         }
     }

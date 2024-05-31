@@ -48,7 +48,7 @@ struct OnBoarding5: View {
                         }
                         else {
                             Rectangle()
-                                .fill(Color.black)
+                                .fill(Color.white)
                                 .opacity(0.8)
                                 .frame(width: geometry.size.width / 13, height: geometry.size.height / 90)
                         }
@@ -76,12 +76,13 @@ struct OnBoarding5: View {
                         selectSmoke(index: 1)
                     }) {
                         ZStack {
+                            
+                            configurationForButton(smoke: smoke[1], geometry: geometry)
                             Image(systemName: "circle.slash")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: geometry.size.width / 7)
-                                .foregroundColor(.black)
-                            configurationForButton(smoke: smoke[1], geometry: geometry)
+                                .foregroundColor(.red)
                         }
                     }
                     .padding(.horizontal)
@@ -96,22 +97,22 @@ struct OnBoarding5: View {
                     Text("Confirm")
                         .font(.system(.title, design: .serif))
                         .foregroundStyle(Color.white)
-                        .frame(width: geometry.size.width/1.3, height: geometry.size.height/11)
+                        .frame(width: geometry.size.width/3, height: geometry.size.height/11)
                         .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
                         .background(RoundedRectangle(cornerRadius: 25.0, style: .continuous)
-                            .fill(smokeSelected ? Color.blue : Color.gray))
+                            .fill(smokeSelected ? Color.blue : Color.red))
                 })
                 .buttonStyle(ScaleButtonStyle())
-                .padding(.bottom)
+                .padding(.vertical)
                 
             }
             .padding(.top)
-            .frame(width: geometry.size.width/1.2, height: geometry.size.height/1.2)
-            .background(Color.white)
-            .opacity(0.6)
-            .clipShape(
-                RoundedRectangle(cornerRadius: 25.0, style: .continuous)
-            )
+//            .frame(width: geometry.size.width/1.2, height: geometry.size.height/1.2)
+//            .background(Color.white)
+//            .opacity(0.6)
+//            .clipShape(
+//                RoundedRectangle(cornerRadius: 25.0, style: .continuous)
+//            )
             Spacer()
         }
     }
@@ -123,7 +124,7 @@ struct OnBoarding5: View {
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: geometry.size.height * 0.05)
             .padding()
             .background(RoundedRectangle(cornerRadius: 25)
-                .fill(smoke.selected ? Color.blue : Color.gray))
+                .fill(smoke.selected ? Color.blue : Color.white))
     }
     private func selectSmoke(index: Int) {
         for i in smoke.indices {
