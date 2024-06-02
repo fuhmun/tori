@@ -86,7 +86,7 @@ struct OnBoarding3: View {
                         initiateDelayedActions()
                     }
                 }, label: {
-                    Text("Confirm")
+                    Text("Next")
                         .font(.system(.title, design: .serif))
                         .foregroundStyle(Color.white)
                         .frame(width: geometry.size.width/3, height: geometry.size.height/11)
