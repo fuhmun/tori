@@ -9,18 +9,19 @@ import Foundation
 import SwiftUI
 
 struct OnBoarding1: View {
-    @State var userName: String = ""
+    @State var firstName: String = ""
+    @State var lastName: String = ""
     var geometry: GeometryProxy
     let indexRectangle: Int = 0
     @Binding var selectedTab: Int
     
     var body: some View {
         VStack {
-//            Text("Hey there! Welcome to Tori. We're excited to see what you'll explore!")
-//                .font(.system(.title2, design: .serif))
-//                .multilineTextAlignment(.center)
-//                .padding(.horizontal)
-//                .foregroundColor(.white)
+            Text("Hey there! Welcome to Tori. We're excited to see what you'll explore!")
+                .font(.system(.title2, design: .serif))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+                .foregroundColor(.white)
             VStack {
                 HStack {
                     ForEach(0..<6) { i in
@@ -37,7 +38,7 @@ struct OnBoarding1: View {
                         }
                     }
                 }
-                Text("Hey there! Welcome to Tori. We're excited to see what you'll explore! \nFirst things first, what's your name?")
+                Text("First things first, what's your name?")
                     .font(.system(.title2, design: .serif))
                     .font(.title)
                     .foregroundColor(.black)
@@ -45,8 +46,22 @@ struct OnBoarding1: View {
                     .multilineTextAlignment(.center)
                 
                 TextField (
-                    "",
-                    text: $userName
+                    "First",
+                    text: $firstName
+                )
+                .foregroundColor(.black)
+                .background(Color.white)
+                .multilineTextAlignment(.center)
+                .disableAutocorrection(true)
+                .textFieldStyle(.roundedBorder)
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .frame(width: geometry.size.width/1.4, height: geometry.size.height/35)
+                .opacity(0.9)
+                .padding(.all)
+                
+                TextField (
+                    "Last",
+                    text: $lastName
                 )
                 .foregroundColor(.black)
                 .background(Color.white)
@@ -60,16 +75,16 @@ struct OnBoarding1: View {
                 Spacer()
                 
                 Button {
-                    if userName != "" {
+                    if firstName != "" && lastName != "" {
                         initiateDelayedActions()
                     }
                 } label: {
-                    Text("Confirm")
+                    Text("Next")
                         .font(.system(.title, design: .serif))
                         .foregroundStyle(Color.white)
                         .frame(width: geometry.size.width/1.3, height: geometry.size.height/11)
                         .background(RoundedRectangle(cornerRadius: 25.0, style: .continuous)
-                            .fill(userName != "" ? Color.blue : Color.gray))
+                            .fill(firstName != "" && lastName != "" ? Color.blue : Color.gray))
                 }
                 
                 .buttonStyle(ScaleButtonStyle())
@@ -88,7 +103,7 @@ struct OnBoarding1: View {
     private func initiateDelayedActions() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             withAnimation {
-                if self.userName != "" {
+                if self.firstName != "" && self.lastName != "" {
                     self.selectedTab = 1
                 }
             }
