@@ -7,86 +7,68 @@
 
 import SwiftUI
 
-
 struct OnBoarding6: View {
-    @State var geometry: GeometryProxy
-    let indexRectangle: Int = 5
-    @Binding var selectedTab: Int
-    
-    var body: some View {
-        VStack {
-            HStack {
-                ForEach(0..<6) { i in
-                    if indexRectangle >= i {
-                        Rectangle()
-                            .fill(Color.orange)
-                            .frame(width: geometry.size.width / 13, height: geometry.size.height / 90)
-                    }
-                    else {
-                        Rectangle()
-                            .fill(Color.black)
-                            .opacity(0.8)
-                            .frame(width: geometry.size.width / 13, height: geometry.size.height / 90)
-                    }
-                }
-            }
-            Text("Are you cool with smoking?")
-                .font(.system(.title, design: .serif))
-                .font(.title)
-                .foregroundColor(.black)
-                .padding(.all)
-                .multilineTextAlignment(.center)
-            
-            HStack {
-                //Button 1
-                Button(action: {
-                    
-                }) {
-                    Text("Click here")
-                }
-                .padding(.horizontal)
-                //Button 2
-                Button(action: {
-                    
-                }) {
-                    ZStack {
-                        Image(systemName: "circle.slash")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: geometry.size.width / 7)
-                            .foregroundColor(.black)
-                        Text("Click here")
-                    }
-                }
-                .padding(.horizontal)
-            }
-            Spacer()
-            
-            Button(action: {
-                
-            }, label: {
-                Text("Confirm")
-                    .font(.system(.title, design: .serif))
-                    .foregroundStyle(Color.white)
-                    .frame(width: geometry.size.width/1.3, height: geometry.size.height/11)
-                    .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
-                    .background(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
-            })
-            .buttonStyle(ScaleButtonStyle())
-            .padding(.bottom)
-
-        }
-        .padding(.top)
-        .frame(width: geometry.size.width/1.2, height: geometry.size.height/1.2)
-        .background(Color.white)
-        .opacity(0.6)
-        .clipShape(
-            RoundedRectangle(cornerRadius: 25.0, style: .continuous)
+    @State private var bubbles: [Bubble] = (0..<10).map { _ in
+        Bubble(
+            position: CGPoint(x: CGFloat.random(in: 50...350), y: CGFloat.random(in: 100...700)),
+            direction: CGSize(width: CGFloat.random(in: -1...1), height: CGFloat.random(in: -1...1))
         )
+    }
+    let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
+    @State private var backgroundColor = Color.white
 
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                Image("Background")
+
+                ForEach($bubbles) { $bubble in
+                    BubbleView(bubble: $bubble)
+                }
+            }
+            .onReceive(timer) { _ in
+                updateBubblePositions(in: geometry.size)
+            }
+        }
+        .edgesIgnoringSafeArea(.all)
+    }
+
+    private func updateBubblePositions(in size: CGSize) {
+        for index in bubbles.indices {
+            guard bubbles[index].isPressed == false else { continue }
+            var newPosition = CGPoint(
+                x: bubbles[index].position.x + bubbles[index].direction.width,
+                y: bubbles[index].position.y + bubbles[index].direction.height
+            )
+
+          
+            if newPosition.x < 0 || newPosition.x > size.width {
+                bubbles[index].direction.width *= -1
+                newPosition.x = min(max(newPosition.x, 0), size.width)
+            }
+            if newPosition.y < 0 || newPosition.y > size.height {
+                bubbles[index].direction.height *= -1
+                newPosition.y = min(max(newPosition.y, 0), size.height)
+            }
+
+           
+            for otherIndex in bubbles.indices where otherIndex != index && bubbles[otherIndex].isPressed == false {
+                let otherBubble = bubbles[otherIndex]
+                let distance = hypot(newPosition.x - otherBubble.position.x, newPosition.y - otherBubble.position.y)
+                if distance < size.width / 15 {
+                    let angle = atan2(newPosition.y - otherBubble.position.y, newPosition.x - otherBubble.position.x)
+                    bubbles[index].direction = CGSize(width: cos(angle), height: sin(angle))
+                    bubbles[otherIndex].direction = CGSize(width: -cos(angle), height: -sin(angle))
+                }
+            }
+
+            bubbles[index].position = newPosition
+        }
     }
 }
 
-//#Preview {
-//    OnBoarding5()
-//}
+
+
+#Preview {
+    OnBoarding6()
+}

@@ -56,6 +56,8 @@
 		168AF63F2C060864006CE4AF /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AF63E2C060864006CE4AF /* FavoritesView.swift */; };
 		206929C92C062E7E00549AEB /* StackedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206929C82C062E7E00549AEB /* StackedCardView.swift */; };
 		206929CB2C07736E00549AEB /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206929CA2C07736E00549AEB /* TagListView.swift */; };
+		633F135A2C09117F00F58FF0 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633F13592C09117F00F58FF0 /* BubbleView.swift */; };
+		633F135C2C0911B700F58FF0 /* BubbleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633F135B2C0911B700F58FF0 /* BubbleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		168AF63E2C060864006CE4AF /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		206929C82C062E7E00549AEB /* StackedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackedCardView.swift; sourceTree = "<group>"; };
 		206929CA2C07736E00549AEB /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		633F13592C09117F00F58FF0 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
+		633F135B2C0911B700F58FF0 /* BubbleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +264,7 @@
 				168AF5E72BF3B262006CE4AF /* Profile.swift */,
 				168AF6172BF3BD82006CE4AF /* SwiftData.swift */,
 				168AF61F2BF3BE3A006CE4AF /* TipKit.swift */,
+				633F135B2C0911B700F58FF0 /* BubbleModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				168AF6342C00DBAE006CE4AF /* OnBoarding4.swift */,
 				168AF6362C00DBC7006CE4AF /* OnBoarding5.swift */,
 				168AF6382C00DBE1006CE4AF /* OnBoarding6.swift */,
+				633F13592C09117F00F58FF0 /* BubbleView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				168AF6092BF3BC6F006CE4AF /* FilterView.swift in Sources */,
 				168AF6202BF3BE3A006CE4AF /* TipKit.swift in Sources */,
 				168AF6122BF3BD05006CE4AF /* YelpFusion.swift in Sources */,
+				633F135A2C09117F00F58FF0 /* BubbleView.swift in Sources */,
 				168AF63D2C06083D006CE4AF /* VisitedView.swift in Sources */,
 				168AF63B2C0607A9006CE4AF /* MustTryView.swift in Sources */,
 				168AF5E82BF3B262006CE4AF /* Profile.swift in Sources */,
@@ -484,6 +491,7 @@
 				168AF5BC2BF3AE4F006CE4AF /* toriApp.swift in Sources */,
 				168AF5FC2BF3BB37006CE4AF /* OnBoarding.swift in Sources */,
 				168AF60D2BF3BC8A006CE4AF /* LoadingView.swift in Sources */,
+				633F135C2C0911B700F58FF0 /* BubbleModel.swift in Sources */,
 				168AF6052BF3BBCA006CE4AF /* FrontBigCardView.swift in Sources */,
 				168AF6142BF3BD25006CE4AF /* OpenAI.swift in Sources */,
 			);
